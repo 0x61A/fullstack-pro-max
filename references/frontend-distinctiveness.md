@@ -1,8 +1,12 @@
-> Last updated: 2026-07-03 · Module version: 0.1
+> Last updated: 2026-07-03 · Module version: 0.2
 
 # Frontend Distinctiveness — the Anti-Generic-Design Playbook
 
 This is the flagship reference for the `design` action. Pairs with `data/ui-ux/distinctiveness-patterns.csv` (17 techniques) — query via `scripts/common/search.py`. **Load this file whenever a design task is brand-forward** (marketing site, portfolio, landing page, product hero) — it matters less for pure utility UI (admin panels, internal tools) where predictability usually beats novelty.
+
+## Sector Art Direction — a 10-recipe addition (`data/ui-ux/sector-art-direction.csv`, UX068-UX077)
+
+Starting points for 10 common business categories, each pairing a palette/type/layout direction with an explicit "avoid when" so it isn't applied mechanically: cafe/restaurant (warm earth + food photography, `UX068`), healthcare/clinic (muted calm + whitespace, `UX069`), legal (deep ink + serif authority, `UX070`), SaaS (product screenshots as hero, `UX071`), e-commerce (high-contrast product grid, `UX072`), real estate (large-format imagery as content, `UX073`), fitness/wellness (high-energy duotone, `UX074`), fintech (single-hue data density, `UX075`), education (friendly rounded + progress-forward, `UX076`), and nonprofit (documentary authenticity over polish, `UX077`). Treat these as a starting point to combine with 2-3 general distinctiveness techniques (`UX066`), not a substitute for them — a sector recipe applied without further customization is itself a new template.
 
 ## The Core Problem This Solves
 

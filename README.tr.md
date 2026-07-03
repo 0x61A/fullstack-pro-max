@@ -30,7 +30,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **E-posta** | Resend/Postmark/SES seçimi, kuyruklu idempotent gönderim, 14 deliverability kontrolü (SPF/DKIM/DMARC, toplu gönderici kuralları, warmup) |
 | **i18n / Yerelleştirme** | next-intl/react-i18next seçimi, URL stratejisi, hreflang, RTL, ICU çoğullama, 12 l10n kontrolü |
 
-~829 veri satırı, 34 referans dokümanı, 14 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~839 veri satırı, 34 referans dokümanı, 14 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 

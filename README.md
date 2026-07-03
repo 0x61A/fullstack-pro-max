@@ -30,7 +30,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 | **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~829 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~839 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

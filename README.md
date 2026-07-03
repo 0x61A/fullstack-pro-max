@@ -6,13 +6,13 @@
 
 *Türkçe sürüm: [README.tr.md](README.tr.md)*
 
-A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, and analytics — with adaptive stack selection rather than one fixed frontend+backend combo.
+A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, analytics, and email — with adaptive stack selection rather than one fixed frontend+backend combo.
 
 Built for two use cases: agency/client delivery and personal SaaS builds.
 
 ## What's inside
 
-Eleven modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
+Twelve modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
 
 | Module | Coverage |
 |---|---|
@@ -27,8 +27,9 @@ Eleven modules, each backed by structured data (CSV), on-demand reference docs, 
 | **Ads** | 64 checks: Google/Meta/LinkedIn/TikTok/Microsoft + cross-platform tracking/attribution |
 | **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
 | **Analytics** | GA4/PostHog/Plausible selection, event taxonomy & track-plan-as-code, funnels/retention, consent-compliant measurement |
+| **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 
-~721 data rows, 32 reference docs, 12 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~755 data rows, 33 reference docs, 13 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

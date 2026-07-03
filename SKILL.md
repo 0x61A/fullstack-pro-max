@@ -1,16 +1,16 @@
 ---
 name: fullstack-pro-max
-description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); and analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking). Actions: plan, build, design, integrate, integrate-ai, measure, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
+description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking); and email (Resend/Postmark/SES selection, transactional sending patterns, SPF/DKIM/DMARC deliverability). Actions: plan, build, design, integrate, integrate-ai, integrate-email, measure, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   last_updated: "2026-07-03"
 ---
 
 # Fullstack Pro Max — Full-Stack Product Delivery
 
-One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, and analytics & measurement. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
+One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, analytics & measurement, and email. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
 
-All 11 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration, Analytics) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
+All 12 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration, Analytics, Email) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
 
 ## When to Apply
 
@@ -69,6 +69,7 @@ This skill defaults to asking clarifying questions before starting non-trivial w
 | `launch-ads` | ✅ Built | Ads | `references/ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md`, `data/ads/*.csv`, `scripts/common/score.py` |
 | `integrate-ai` | ✅ Built | AI Integration | `references/ai-integration.md`, `references/ai-security.md`, `data/ai/*.csv`, `scripts/ai/generate.py`, `scripts/common/score.py` |
 | `measure` | ✅ Built | Analytics | `references/analytics-measurement.md`, `data/analytics/*.csv`, `scripts/analytics/generate.py`, `scripts/common/score.py` |
+| `integrate-email` | ✅ Built | Email | `references/email-integration.md`, `data/email/*.csv`, `scripts/email/generate.py`, `scripts/common/score.py` |
 | `review` / `audit` | ✅ Built | All (cross-module) | `references/workflows.md` — chains the module-specific checks/scripts above into Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass sequences |
 
 Full detail, trigger phrases, and the graceful-degradation rule live in [`references/routing.md`](references/routing.md) — load it whenever an action doesn't obviously map to a single file above.
@@ -140,6 +141,12 @@ Platform selection (GA4/Plausible/Umami for web, PostHog/Mixpanel/Amplitude for 
 - Reference: `references/analytics-measurement.md`
 - Script: `scripts/analytics/generate.py` — scaffolds a typed track-plan module (PostHog/GA4/Plausible) with consent guard and naming validation. `python3 scripts/analytics/generate.py --help`.
 
+### Email — ✅ Built (Phase B3)
+Transactional + marketing email: provider selection (Resend/Postmark/SES/SendGrid, dedicated marketing platforms, mandatory stream separation), sending architecture (queue-backed, idempotent, suppression-aware, sandboxed outside production), and a 14-check deliverability checklist (SPF/DKIM/DMARC progression, aligned return-path, Gmail/Yahoo bulk-sender rules, one-click unsubscribe, warmup, complaint-rate monitoring, KVKK/CAN-SPAM).
+- Data: `data/email/provider-selection.csv` (10 rows), `sending-patterns.csv` (10 rows), `deliverability-checklist.csv` (14 checks)
+- Reference: `references/email-integration.md`
+- Script: `scripts/email/generate.py` — scaffolds a queue-friendly send module (Resend/Postmark/SES × Node/Python) with suppression, idempotency, and sandbox guards baked in. `python3 scripts/email/generate.py --help`.
+
 ## Stack Selection Logic
 
 Default recommendation for a greenfield project with no strong constraint pointing elsewhere: **Next.js (API Routes) + Supabase**. It covers the majority of MVP, SaaS, and agency-site builds with the least new infrastructure to learn, and both have first-class MCP tooling available when connected in your environment.
@@ -176,3 +183,4 @@ All scripts are Python 3, **stdlib-only** (no `requirements.txt`, no vendored ve
 - `scripts/common/validate.py` — validate every `data/**/*.csv` against the shared schemas in `references/conventions.md` (ID prefixes, uniqueness, severities, dates). Run after authoring or editing any data row. `python3 scripts/common/validate.py --help`.
 - `scripts/ai/generate.py` — scaffold a streaming Claude chat endpoint (Next.js/Express/FastAPI) with auth, rate-limit, and input-cap hooks. `python3 scripts/ai/generate.py --help`.
 - `scripts/analytics/generate.py` — scaffold a typed track-plan module (PostHog/GA4/Plausible) from a list of event names. `python3 scripts/analytics/generate.py --help`.
+- `scripts/email/generate.py` — scaffold a queue-friendly transactional email module (Resend/Postmark/SES × Node/Python). `python3 scripts/email/generate.py --help`.

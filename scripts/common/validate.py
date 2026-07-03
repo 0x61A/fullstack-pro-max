@@ -28,6 +28,7 @@ PREFIXES = {
     "backend": "BE",
     "database": "DB",
     "devops": "DO",
+    "email": "EM",
     "testing": "QA",
     "security": "SEC",
     "ecommerce": "EC",

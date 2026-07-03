@@ -2,6 +2,13 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.4.0] — 2026-07-03
+
+### Added
+- **Email module** (12th module, `EM` prefix, action `integrate-email`): 34 new data rows — `data/email/provider-selection.csv` (10: Resend/Postmark/SES/SendGrid, marketing platforms, mandatory stream separation, React Email/MJML, inbound parsing, sandboxing), `sending-patterns.csv` (10: queue-backed sends, idempotency, suppression webhooks, RFC 8058 one-click unsubscribe, double opt-in, warmup, i18n), `deliverability-checklist.csv` (14 checks: SPF/DKIM/DMARC progression, aligned return-path, Gmail/Yahoo bulk-sender rules, complaint-rate monitoring, list-bombing protection, MTA-STS).
+- `references/email-integration.md` — provider decision tree, the four sending non-negotiables, authentication-first deliverability guidance.
+- `scripts/email/generate.py`: scaffolds a queue-friendly transactional send module (Resend/Postmark/SES × Node/Python) with suppression, idempotency, and sandbox guards baked in.
+
 ## [0.3.0] — 2026-07-03
 
 ### Added
@@ -28,6 +35,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.4.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.4.0
 [0.3.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.3.0
 [0.2.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.2.0
 [0.1.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.1.0

@@ -1,0 +1,161 @@
+---
+name: fullstack-pro-max
+description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; and e-commerce payments (Stripe, Shopify). Actions: plan, build, design, integrate, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
+metadata:
+  version: "0.1.0"
+  last_updated: "2026-07-03"
+---
+
+# Fullstack Pro Max — Full-Stack Product Delivery
+
+One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, and e-commerce payments. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
+
+All 9 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
+
+## When to Apply
+
+### Must Use
+- Scaffolding a new project's backend/API from scratch
+- Choosing a stack (frontend, backend, database, hosting) for a new build
+- Designing or reviewing API endpoints, error handling, or request/response contracts
+- Pre-launch security, SEO, or ads audits (see `references/workflows.md` § Pre-Launch Audit)
+- Setting up CI/CD, deployment, database schema, or auth
+
+### Recommended
+- Mid-project architecture questions ("is this the right stack for what we're building")
+- Code review that touches backend structure, API design, or error handling
+- Deciding between competing patterns (REST vs GraphQL, cursor vs offset pagination, etc.)
+
+### Skip
+- Pure content writing or copy editing unrelated to building/shipping the product
+- Non-technical business questions (pricing strategy, market research) with no engineering component
+- Purely visual/CSS polish on an already-built page with no architectural question involved
+
+**Decision criteria**: if the task is about *deciding how to build, ship, secure, or grow* a web product, this skill applies.
+
+## Ask Before You Build
+
+This skill defaults to asking clarifying questions before starting non-trivial work, not to guessing silently and hoping the guess matches what the user actually needed. (This mirrors how this skill itself was built — two rounds of structured questions on architecture, scope, and dependency policy before a single file was written.)
+
+**Ask 2-4 concrete questions before:**
+- Choosing a stack for a new project (frontend/backend/database/hosting) — unless the user already stated a preference or the existing codebase already implies one.
+- Any `secure` work — what's the deployment target, what data is actually at risk, is there a compliance context (GDPR, PCI, none)? A generic OWASP pass without this context risks solving the wrong problem.
+- Any `integrate-payments` work — Stripe vs. Shopify, subscription vs. one-time, and an explicit confirmation of test-mode vs. live keys before any code that could trigger a real charge.
+- Any irreversible or hard-to-undo action — a production deploy, a migration against a live table, rotating/deleting a credential, a DNS/domain change. Match the caution level in the top-level system instructions on risky actions; this skill doesn't override that.
+- A request broad enough to have multiple reasonable interpretations ("build the backend" could mean a scaffold, a full CRUD API, or a production-ready API with auth+tests+deploy — ask which, don't guess the most expensive interpretation by default).
+
+**Don't ask when:**
+- The answer is already visible in the codebase, the conversation, or this skill's own stated defaults (don't ask "which test framework" if `package.json` already has one installed).
+- The task is small, reversible, and low-stakes (a copy tweak, a single CSS value, a typo fix).
+- The user already stated a clear preference earlier in the conversation — don't re-ask something they already told you.
+
+**How to ask:** batch questions together (2-4 at once, via a structured question tool if available, otherwise a short numbered list) rather than trickling out one question per turn. Offer a recommended default in each question where a sensible one exists (see Stack Selection Logic below for the default stack), and treat "I don't know, you decide" as a valid answer that unblocks proceeding with the stated default — don't force a decision the user doesn't have an opinion on.
+
+**When asking isn't possible** (fully autonomous/non-interactive execution): state the assumption explicitly before proceeding — "Assuming Next.js + Supabase since no stack was specified" — rather than silently picking one with no note that a decision was made on the user's behalf.
+
+## Action-Routing Table
+
+| Action | Status | Module | Load |
+|---|---|---|---|
+| `plan` | ✅ Built | Backend (stack selection) + Database + DevOps | `references/backend-architecture.md` (Stack Decision Tree), `references/database-schema-design.md`, `data/backend/stacks.csv` |
+| `build` | ✅ Backend built | Backend & API | `references/backend-architecture.md`, `references/api-design.md`, `scripts/backend/generate.py` |
+| `design` | ✅ Built | UI/UX & Distinctive Frontend | `references/frontend-distinctiveness.md` (flagship — always load for brand-forward work), `references/ui-ux-quickref.md` |
+| `integrate` | ✅ Built | Database & Auth / E-commerce | `references/database-schema-design.md`, `references/auth-patterns.md`, `scripts/database/generate.py` (for db/auth); `references/stripe-integration.md`, `shopify-integration.md`, `scripts/ecommerce/generate.py` (for payments) |
+| `deploy` | ✅ Built | DevOps & Deployment | `references/ci-cd-pipelines.md`, `references/deployment-platforms.md`, `references/env-secrets-management.md`, `scripts/devops/generate.py`, plus the connected Vercel/Netlify/Cloudflare MCP tools |
+| `test` | ✅ Built | Testing/QA | `references/testing-strategy.md`, `references/accessibility-performance-audit.md`, `scripts/testing/generate.py` |
+| `secure` | ✅ Built | Security/Cybersecurity | `references/security-threat-modeling.md`, `secure-coding-standards.md`, `api-security.md`, `infra-cloud-security.md`, `incident-response.md`, `security-scoring.md`, `scripts/security/{generate,audit}.py`, `scripts/common/score.py` |
+| `integrate-payments` | ✅ Built | E-commerce & Payments | `references/stripe-integration.md`, `shopify-integration.md`, `scripts/ecommerce/generate.py`, plus the connected Shopify MCP tools |
+| `optimize-seo` | ✅ Built | SEO | `references/seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md`, `data/seo/*.csv`, `scripts/common/score.py` |
+| `launch-ads` | ✅ Built | Ads | `references/ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md`, `data/ads/*.csv`, `scripts/common/score.py` |
+| `review` / `audit` | ✅ Built | All (cross-module) | `references/workflows.md` — chains the module-specific checks/scripts above into Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass sequences |
+
+Full detail, trigger phrases, and the graceful-degradation rule live in [`references/routing.md`](references/routing.md) — load it whenever an action doesn't obviously map to a single file above.
+
+## Module Reference
+
+### Backend & API — ✅ Built (Phase 1)
+Adaptive stack selection (Node.js: Next.js API Routes/Express/Nest.js/Fastify; Python: FastAPI/Django; BaaS: Supabase/Firebase; Edge: Cloudflare Workers) plus API design conventions (REST/GraphQL/tRPC/gRPC choice, pagination, versioning, idempotency, rate limiting) and error-handling patterns (taxonomy, retries, observability, per-stack conventions).
+- Data: `data/backend/stacks.csv` (40 rows), `data/backend/api-patterns.csv` (25 rows), `data/backend/error-handling.csv` (22 rows)
+- References: `references/backend-architecture.md`, `references/api-design.md`
+- Script: `scripts/backend/generate.py` — scaffolds a CRUD endpoint (route/controller/service or router/schema files as appropriate) for a named resource in any of the 6 supported stacks. Run `python3 scripts/backend/generate.py --help`.
+
+### Database & Auth — ✅ Built (Phase 2)
+Schema design patterns (normalization, PK strategy, soft/hard delete, multi-tenancy via RLS, indexing), auth strategy matrix (session/JWT/OAuth/magic-link/passkey/MFA/authorization models), migrations safety discipline. First-class Supabase coverage — if the Supabase MCP is connected in your environment, use it for `execute_sql`, `apply_migration`, `list_tables`, `get_advisors`.
+- Data: `data/database/schema-patterns.csv` (30 rows), `data/database/auth-patterns.csv` (25 rows), `data/database/migrations-checklist.csv` (21 checks)
+- References: `references/database-schema-design.md`, `references/auth-patterns.md`
+- Script: `scripts/database/generate.py` — scaffolds a Supabase SQL migration (with optional starter RLS policies) or a Prisma model fragment for a named table. `python3 scripts/database/generate.py --help`.
+
+### DevOps & Deployment — ✅ Built (Phase 3)
+CI/CD pipeline shape (branch strategy, required gates, deploy strategy, rollback), Vercel/Netlify/Cloudflare/Railway platform decision matrix, env/secrets management discipline. If the Vercel, Netlify, or Cloudflare MCP tools are connected in your environment, use them directly for deploys/logs/project management alongside this module's guidance.
+- Data: `data/devops/ci-cd-patterns.csv` (25 rows), `data/devops/platforms.csv` (17 rows), `data/devops/env-management.csv` (13 rows)
+- References: `references/ci-cd-pipelines.md`, `references/deployment-platforms.md`, `references/env-secrets-management.md`
+- Script: `scripts/devops/generate.py` — scaffolds a GitHub Actions CI workflow (lint/typecheck/test/build, platform-appropriate deploy step) plus a `.env.example`. `python3 scripts/devops/generate.py --help`.
+
+### Testing/QA — ✅ Built (Phase 4)
+Test strategy by stack (unit/integration/e2e, tooling per stack, mocking/factory/isolation discipline), plus a 25-check accessibility + Core Web Vitals performance checklist.
+- Data: `data/testing/test-strategy.csv` (25 rows), `data/testing/a11y-perf-checklist.csv` (25 checks)
+- References: `references/testing-strategy.md`, `references/accessibility-performance-audit.md`
+- Script: `scripts/testing/generate.py` — scaffolds a test file skeleton (Vitest/Jest/pytest/Playwright) for a named subject. `python3 scripts/testing/generate.py --help`.
+
+### Security/Cybersecurity — ✅ Built (Phase 5, full-depth "big three" module)
+Genuine cybersecurity-expert depth, not a checklist skim: OWASP Top 10 mapped to concrete checks, STRIDE-based threat modeling, secure coding standards per stack (Node.js/Python/Next.js/Express/Django), API-specific security (BOLA, mass assignment, rate limiting, GraphQL complexity), infra/cloud security (IAM, network exposure, backups, DNS), and a full incident-response lifecycle (preparedness → detection → containment → eradication → blameless post-mortem). 124 checks total.
+- Data: `data/security/owasp-checklist.csv` (35), `threat-modeling-checks.csv` (20), `secure-coding-checks.csv` (20), `api-security-checks.csv` (15), `infra-cloud-security-checks.csv` (17), `incident-response-checklist.csv` (17)
+- References: `references/security-threat-modeling.md`, `secure-coding-standards.md`, `api-security.md`, `infra-cloud-security.md`, `incident-response.md`, `security-scoring.md`
+- Scripts: `scripts/security/generate.py` (scaffolds security-headers middleware for Next.js/Express/FastAPI), `scripts/security/audit.py` (stdlib regex-based static scan for hardcoded secrets, dangerous patterns, missing headers — exits non-zero on Critical/High findings, CI-gateable), `scripts/common/score.py` (shared severity-weighted posture scoring, also reused by the SEO and Ads modules)
+
+### E-commerce & Payments — ✅ Built (Phase 6)
+Stripe (checkout approach selection, subscriptions/metered billing, webhook non-negotiables, refunds/disputes, Connect, Tax) and Shopify (hosted vs. headless, checkout extensibility via Functions, GraphQL Admin API, inventory-as-source-of-truth) integration patterns. If the Shopify MCP is connected in your environment, use it directly for product/discount/order operations alongside this module's guidance.
+- Data: `data/ecommerce/stripe-patterns.csv` (17 rows), `data/ecommerce/shopify-patterns.csv` (12 rows)
+- References: `references/stripe-integration.md`, `references/shopify-integration.md`
+- Script: `scripts/ecommerce/generate.py` — scaffolds a signature-verified, idempotent webhook handler for Stripe or Shopify across Next.js/Express/FastAPI. `python3 scripts/ecommerce/generate.py --help`.
+
+### UI/UX & Distinctive Frontend Design — ✅ Built (Phase 7)
+Flagship focus: producing frontend design that doesn't read as templated or generic-AI-looking — art-direction frameworks, unique layout/type/motion techniques, plus a curated original color/typography/UX-guideline set. This is the module that directly answers "make this look unique, not templated."
+- Data: `data/ui-ux/colors.csv` (20 palettes), `typography.csv` (13 pairings), `ux-guidelines.csv` (17 checks), `distinctiveness-patterns.csv` (17 flagship techniques) — 67 rows total
+- References: `references/ui-ux-quickref.md`, `references/frontend-distinctiveness.md` (flagship — load this for any brand-forward marketing/landing/portfolio work)
+
+### SEO — ✅ Built (Phase 8, 92 checks)
+Technical SEO, on-page, content/E-E-A-T, and schema-type selection — original content, self-contained (not shared with the existing `seo`/`seo-audit` skills). Includes GEO (AI Overviews/ChatGPT/Perplexity citability) checks folded into the content module.
+- Data: `data/seo/technical-seo-checks.csv` (34), `onpage-checks.csv` (23), `content-eeat-checks.csv` (19), `schema-types.csv` (16 schema.org type decision matrix) — 92 rows total
+- References: `references/seo-technical.md`, `references/seo-content-eeat.md`, `references/seo-scoring-system.md`
+- Scoring: reuses `scripts/common/score.py` — same severity-weighted formula as the Security module
+
+### Ads — ✅ Built (Phase 9, 64 checks)
+Google/Meta/LinkedIn/TikTok/Microsoft ad audits, plus cross-platform tracking & attribution (server-side tracking, deduplication, consent mode, MER as an attribution-bias sanity check) — original content, self-contained (not shared with the existing `ads`/`ads-audit` skills).
+- Data: `data/ads/google-ads-checks.csv` (20), `meta-ads-checks.csv` (14), `platform-checks.csv` (16, LinkedIn+TikTok+Microsoft), `tracking-attribution-checks.csv` (14) — 64 rows total
+- References: `references/ads-google.md`, `references/ads-meta.md`, `references/ads-other-platforms.md`, `references/ads-scoring-system.md` (also covers cross-platform tracking/attribution)
+- Scoring: reuses `scripts/common/score.py`
+
+## Stack Selection Logic
+
+Default recommendation for a greenfield project with no strong constraint pointing elsewhere: **Next.js (API Routes) + Supabase**. It covers the majority of MVP, SaaS, and agency-site builds with the least new infrastructure to learn, and both have first-class MCP tooling available when connected in your environment.
+
+Deviate from the default when:
+- The team is Python-first or the product has a real AI/ML/data-pipeline component → **FastAPI** (API-first) or **Django** (admin/content-heavy).
+- The backend needs enforced structure across multiple domains for a larger team → **Nest.js**.
+- The product is mobile-first and needs offline-first sync → **Firebase**.
+- The API needs to run at the edge for global low-latency, simple request/response only → **Cloudflare Workers**.
+
+Full decision tree with the reasoning behind each branch: `references/backend-architecture.md` § Stack Decision Tree. Full row-by-row matrix with 40 stack/project-type combinations: `data/backend/stacks.csv` (query via `scripts/common/search.py`).
+
+## Cross-Module Workflows
+
+Four documented multi-step chains — Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass — live in [`references/workflows.md`](references/workflows.md). Load it whenever a request spans more than one module (e.g. "get this ready to launch," "audit this before we hand it to the client").
+
+## Conventions
+
+CSV schema (decision-matrix vs. checklist variants), check-ID prefixes per module, severity-weighting formula for scoring, reference-file versioning header format: all defined once in [`references/conventions.md`](references/conventions.md). Every module follows these — read it before authoring or querying any module's data.
+
+## Scripts
+
+All scripts are Python 3, **stdlib-only** (no `requirements.txt`, no vendored venv — this skill operates on the user's real project code, so it relies on the project's own installed dependencies rather than shipping its own environment).
+
+- `scripts/common/search.py` — query any `data/**/*.csv` file by id, category, tag, severity, or free-text. `python3 scripts/common/search.py --help`.
+- `scripts/backend/generate.py` — scaffold a CRUD endpoint for a named resource in any supported backend stack. `python3 scripts/backend/generate.py --help`.
+- `scripts/database/generate.py` — scaffold a Supabase SQL migration or Prisma model fragment for a named table. `python3 scripts/database/generate.py --help`.
+- `scripts/devops/generate.py` — scaffold a CI workflow and `.env.example` for a chosen stack/platform. `python3 scripts/devops/generate.py --help`.
+- `scripts/testing/generate.py` — scaffold a test file skeleton (Vitest/Jest/pytest/Playwright). `python3 scripts/testing/generate.py --help`.
+- `scripts/security/generate.py` — scaffold security-headers middleware (Next.js/Express/FastAPI). `python3 scripts/security/generate.py --help`.
+- `scripts/security/audit.py` — static-scan a project for hardcoded secrets, dangerous code patterns, and missing security headers. `python3 scripts/security/audit.py --help`.
+- `scripts/common/score.py` — compute a severity-weighted score from any checklist-schema CSV against a results file. `python3 scripts/common/score.py --help`.
+- `scripts/ecommerce/generate.py` — scaffold a Stripe or Shopify webhook handler (Next.js/Express/FastAPI). `python3 scripts/ecommerce/generate.py --help`.

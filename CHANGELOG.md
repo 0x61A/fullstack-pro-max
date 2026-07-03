@@ -2,6 +2,14 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.5.0] — 2026-07-03
+
+### Added
+- **i18n / Localization module** (13th module, `IN` prefix, action `localize`): 34 new data rows — `data/i18n/library-selection.csv` (10: next-intl/react-i18next/Paraglide/FormatJS, static vs. database content model, TMS/MT/in-repo translation workflow, Intl API formatting), `routing-content-patterns.csv` (12: subpath/subdomain/ccTLD URL strategy, fallback locale chain, hreflang generation, RTL via logical CSS, ICU pluralization, no string concatenation, locale-aware currency), `l10n-checklist.csv` (12 checks: hardcoded strings, hreflang/sitemap validation, no forced redirects, text expansion, plural grammar, fallback behavior, translation coverage, translated metadata, pseudo-localization in CI, legal text review).
+- `references/i18n-localization.md` — library decision tree, content model split, the grammar rules naive i18n gets wrong; cross-referenced with the SEO module's hreflang (`SEO019`) and no-forced-redirect (`SEO020`) rules.
+- `scripts/i18n/generate.py`: scaffolds locale routing config, per-locale message stubs (default locale gets real strings, others get TODO-marked stubs with identical key structure), and an hreflang generator for next-intl or react-i18next.
+- This closes **Phase B** (4 new modules added this cycle: AI Integration, Analytics, Email, i18n).
+
 ## [0.4.0] — 2026-07-03
 
 ### Added
@@ -35,6 +43,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.5.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.5.0
 [0.4.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.4.0
 [0.3.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.3.0
 [0.2.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.2.0

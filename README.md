@@ -6,13 +6,13 @@
 
 *Türkçe sürüm: [README.tr.md](README.tr.md)*
 
-A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, analytics, and email — with adaptive stack selection rather than one fixed frontend+backend combo.
+A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, analytics, email, and i18n/localization — with adaptive stack selection rather than one fixed frontend+backend combo.
 
 Built for two use cases: agency/client delivery and personal SaaS builds.
 
 ## What's inside
 
-Twelve modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
+Thirteen modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
 
 | Module | Coverage |
 |---|---|
@@ -28,8 +28,9 @@ Twelve modules, each backed by structured data (CSV), on-demand reference docs, 
 | **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
 | **Analytics** | GA4/PostHog/Plausible selection, event taxonomy & track-plan-as-code, funnels/retention, consent-compliant measurement |
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
+| **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~755 data rows, 33 reference docs, 13 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~789 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

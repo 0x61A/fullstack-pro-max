@@ -1,16 +1,16 @@
 ---
 name: fullstack-pro-max
-description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking); and email (Resend/Postmark/SES selection, transactional sending patterns, SPF/DKIM/DMARC deliverability). Actions: plan, build, design, integrate, integrate-ai, integrate-email, measure, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
+description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking); email (Resend/Postmark/SES selection, transactional sending patterns, SPF/DKIM/DMARC deliverability); and i18n/localization (next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization). Actions: plan, build, design, integrate, integrate-ai, integrate-email, measure, localize, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
   last_updated: "2026-07-03"
 ---
 
 # Fullstack Pro Max — Full-Stack Product Delivery
 
-One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, analytics & measurement, and email. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
+One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, analytics & measurement, email, and i18n/localization. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
 
-All 12 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration, Analytics, Email) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
+All 13 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration, Analytics, Email, i18n) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
 
 ## When to Apply
 
@@ -70,6 +70,7 @@ This skill defaults to asking clarifying questions before starting non-trivial w
 | `integrate-ai` | ✅ Built | AI Integration | `references/ai-integration.md`, `references/ai-security.md`, `data/ai/*.csv`, `scripts/ai/generate.py`, `scripts/common/score.py` |
 | `measure` | ✅ Built | Analytics | `references/analytics-measurement.md`, `data/analytics/*.csv`, `scripts/analytics/generate.py`, `scripts/common/score.py` |
 | `integrate-email` | ✅ Built | Email | `references/email-integration.md`, `data/email/*.csv`, `scripts/email/generate.py`, `scripts/common/score.py` |
+| `localize` | ✅ Built | i18n / Localization | `references/i18n-localization.md`, `data/i18n/*.csv`, `scripts/i18n/generate.py`, `scripts/common/score.py` |
 | `review` / `audit` | ✅ Built | All (cross-module) | `references/workflows.md` — chains the module-specific checks/scripts above into Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass sequences |
 
 Full detail, trigger phrases, and the graceful-degradation rule live in [`references/routing.md`](references/routing.md) — load it whenever an action doesn't obviously map to a single file above.
@@ -147,6 +148,12 @@ Transactional + marketing email: provider selection (Resend/Postmark/SES/SendGri
 - Reference: `references/email-integration.md`
 - Script: `scripts/email/generate.py` — scaffolds a queue-friendly send module (Resend/Postmark/SES × Node/Python) with suppression, idempotency, and sandbox guards baked in. `python3 scripts/email/generate.py --help`.
 
+### i18n / Localization — ✅ Built (Phase B4)
+Multi-language product delivery: library selection (next-intl/react-i18next/Paraglide/FormatJS), content model (static message files vs. database-stored content), translation workflow (in-repo/TMS/MT+review), URL strategy (subpath default, subdomain, ccTLD), and a 12-check l10n checklist covering the grammar/layout details naive i18n gets wrong (ICU pluralization, no string concatenation, RTL, text expansion, hreflang correctness). Shares hreflang and no-forced-redirect rules with the SEO module.
+- Data: `data/i18n/library-selection.csv` (10 rows), `routing-content-patterns.csv` (12 rows), `l10n-checklist.csv` (12 checks)
+- Reference: `references/i18n-localization.md`
+- Script: `scripts/i18n/generate.py` — scaffolds locale routing config, per-locale message stubs, and an hreflang generator (next-intl/react-i18next). `python3 scripts/i18n/generate.py --help`.
+
 ## Stack Selection Logic
 
 Default recommendation for a greenfield project with no strong constraint pointing elsewhere: **Next.js (API Routes) + Supabase**. It covers the majority of MVP, SaaS, and agency-site builds with the least new infrastructure to learn, and both have first-class MCP tooling available when connected in your environment.
@@ -184,3 +191,4 @@ All scripts are Python 3, **stdlib-only** (no `requirements.txt`, no vendored ve
 - `scripts/ai/generate.py` — scaffold a streaming Claude chat endpoint (Next.js/Express/FastAPI) with auth, rate-limit, and input-cap hooks. `python3 scripts/ai/generate.py --help`.
 - `scripts/analytics/generate.py` — scaffold a typed track-plan module (PostHog/GA4/Plausible) from a list of event names. `python3 scripts/analytics/generate.py --help`.
 - `scripts/email/generate.py` — scaffold a queue-friendly transactional email module (Resend/Postmark/SES × Node/Python). `python3 scripts/email/generate.py --help`.
+- `scripts/i18n/generate.py` — scaffold locale routing config, message stubs, and an hreflang generator (next-intl/react-i18next). `python3 scripts/i18n/generate.py --help`.

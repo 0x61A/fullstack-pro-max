@@ -6,13 +6,13 @@
 
 *English version: [README.md](README.md)*
 
-Gerçek bir web ürününü uçtan uca çıkarmak için tek parça, kendi kendine yeten bir [Claude Code](https://claude.com/claude-code) skill'i — özgün (şablon görünümlü olmayan) UI/UX, backend mimarisi, veritabanı & auth, deployment, test, siber güvenlik, SEO, reklam, e-ticaret ödemeleri, AI özellik entegrasyonu, analitik ve e-posta. Tek bir sabit frontend+backend ikilisine kilitlenmek yerine projeye göre uyarlanan stack seçimi yapar.
+Gerçek bir web ürününü uçtan uca çıkarmak için tek parça, kendi kendine yeten bir [Claude Code](https://claude.com/claude-code) skill'i — özgün (şablon görünümlü olmayan) UI/UX, backend mimarisi, veritabanı & auth, deployment, test, siber güvenlik, SEO, reklam, e-ticaret ödemeleri, AI özellik entegrasyonu, analitik, e-posta ve i18n/yerelleştirme. Tek bir sabit frontend+backend ikilisine kilitlenmek yerine projeye göre uyarlanan stack seçimi yapar.
 
 İki kullanım senaryosu için tasarlandı: ajans/müşteri teslimatı ve kişisel SaaS projeleri.
 
 ## İçinde ne var
 
-On iki modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklenen referans dokümanları ve yalnızca stdlib kullanan Python script'leriyle destekleniyor:
+On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklenen referans dokümanları ve yalnızca stdlib kullanan Python script'leriyle destekleniyor:
 
 | Modül | Kapsam |
 |---|---|
@@ -28,8 +28,9 @@ On iki modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükle
 | **AI Entegrasyonu** | Claude API: model seçimi & yönlendirme, streaming endpoint'ler, tool use, RAG, prompt cache/maliyet kontrolü, eval disiplini, 16 LLM güvenlik kontrolü (OWASP LLM Top 10) |
 | **Analitik** | GA4/PostHog/Plausible seçimi, event taksonomisi & kod-olarak-track-planı, funnel/retention, consent uyumlu ölçümleme |
 | **E-posta** | Resend/Postmark/SES seçimi, kuyruklu idempotent gönderim, 14 deliverability kontrolü (SPF/DKIM/DMARC, toplu gönderici kuralları, warmup) |
+| **i18n / Yerelleştirme** | next-intl/react-i18next seçimi, URL stratejisi, hreflang, RTL, ICU çoğullama, 12 l10n kontrolü |
 
-~755 veri satırı, 33 referans dokümanı, 13 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~789 veri satırı, 34 referans dokümanı, 14 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 

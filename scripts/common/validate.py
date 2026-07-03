@@ -29,6 +29,7 @@ PREFIXES = {
     "database": "DB",
     "devops": "DO",
     "email": "EM",
+    "i18n": "IN",
     "testing": "QA",
     "security": "SEC",
     "ecommerce": "EC",

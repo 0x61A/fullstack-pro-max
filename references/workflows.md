@@ -17,13 +17,14 @@ For a new product being built from scratch, personal or client:
 7. **`deploy`** — scaffold CI/CD (`scripts/devops/generate.py`), choose the hosting platform per `deployment-platforms.md`, confirm env/secrets discipline (`env-secrets-management.md`) before the first real deploy.
 8. **`integrate-payments`** (if applicable) — Stripe or Shopify per `stripe-integration.md`/`shopify-integration.md`, scaffold the webhook handler (`scripts/ecommerce/generate.py`), and confirm test-mode keys are in use until explicitly ready to go live.
 9. **`optimize-seo`** — run the technical + on-page checklist (`seo-technical.md`) before launch, not after — `SEO029`'s migration/launch redirect discipline applies to a first launch too if replacing an existing site.
-10. **`launch-ads`** — only after `secure` and `optimize-seo` have run; confirm conversion tracking (`ADS001`/`ADS002`-equivalent for the chosen platform) is verified working before spending real budget.
+10. **`measure`** — instrument before traffic arrives: pick the analytics platform (`analytics-measurement.md` § Platform Decision Tree), scaffold the typed track plan (`scripts/analytics/generate.py`), verify consent gating (`AN024`) and event QA (`AN022`). Launching ads before analytics works means paying to learn nothing.
+11. **`launch-ads`** — only after `secure`, `optimize-seo`, and `measure` have run; confirm conversion tracking (`ADS001`/`ADS002`-equivalent for the chosen platform) is verified working before spending real budget.
 
 ## Workflow 2: Client Delivery Package (agency use case)
 
 For delivering a finished product to a client, with a defined handoff point:
 
-1. Run **Workflow 1** in full through step 9.
+1. Run **Workflow 1** in full through step 10.
 2. **`review`/`audit`** — run `scripts/common/score.py` against `data/security`, `data/seo`, and (if ads were set up) `data/ads` to produce three posture scores for the delivery report — see `security-scoring.md`/`seo-scoring-system.md`/`ads-scoring-system.md` for the shared formula.
 3. Package the three scores plus a short "what's built vs. what the client should monitor going forward" note (test-mode payment keys still active? DNS/domain access handed off? who owns credential rotation post-handoff — see `SEC093` offboarding guidance, applied in reverse to a *new* access grant).
 4. If continuing to `launch-ads` post-handoff, confirm who owns ad account access and billing before campaigns go live.

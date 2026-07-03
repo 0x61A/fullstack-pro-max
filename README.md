@@ -6,13 +6,13 @@
 
 *Türkçe sürüm: [README.tr.md](README.tr.md)*
 
-A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, and AI feature integration — with adaptive stack selection rather than one fixed frontend+backend combo.
+A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, and analytics — with adaptive stack selection rather than one fixed frontend+backend combo.
 
 Built for two use cases: agency/client delivery and personal SaaS builds.
 
 ## What's inside
 
-Ten modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
+Eleven modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
 
 | Module | Coverage |
 |---|---|
@@ -26,8 +26,9 @@ Ten modules, each backed by structured data (CSV), on-demand reference docs, and
 | **SEO** | 92 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability |
 | **Ads** | 64 checks: Google/Meta/LinkedIn/TikTok/Microsoft + cross-platform tracking/attribution |
 | **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
+| **Analytics** | GA4/PostHog/Plausible selection, event taxonomy & track-plan-as-code, funnels/retention, consent-compliant measurement |
 
-~687 data rows, 31 reference docs, 11 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~721 data rows, 32 reference docs, 12 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

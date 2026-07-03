@@ -2,7 +2,7 @@
 
 # Routing
 
-Load this file first when an action doesn't obviously map to a single file. It tells you which module owns an action and which reference/data/script files to load. All 10 modules are built; the Graceful Degradation Rule below is preserved for if this skill ever grows a module that isn't built yet.
+Load this file first when an action doesn't obviously map to a single file. It tells you which module owns an action and which reference/data/script files to load. All 11 modules are built; the Graceful Degradation Rule below is preserved for if this skill ever grows a module that isn't built yet.
 
 ## Module Build Status
 
@@ -18,6 +18,7 @@ Load this file first when an action doesn't obviously map to a single file. It t
 | SEO | ✅ Built | 8 | `data/seo/*.csv` (92 rows) | `seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md` |
 | Ads | ✅ Built | 9 | `data/ads/*.csv` (64 rows) | `ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md` |
 | AI Integration | ✅ Built | B1 | `data/ai/*.csv` (43 rows) | `ai-integration.md`, `ai-security.md` |
+| Analytics | ✅ Built | B2 | `data/analytics/*.csv` (34 rows) | `analytics-measurement.md` |
 
 Update this table (and the mirrored summary in `SKILL.md`) in the same edit whenever a module ships. Never let the two drift.
 
@@ -36,11 +37,12 @@ Update this table (and the mirrored summary in `SKILL.md`) in the same edit when
 | `optimize-seo` | "SEO audit", "improve rankings" | SEO | Module-backed: 92 checks across technical, on-page, content/E-E-A-T, and schema-type selection (`data/seo/*.csv`), plus `scripts/common/score.py` for posture scoring |
 | `launch-ads` | "set up ads", "ad campaign" | Ads | Module-backed: 64 checks across Google, Meta, LinkedIn/TikTok/Microsoft, and cross-platform tracking/attribution (`data/ads/*.csv`), plus `scripts/common/score.py` |
 | `integrate-ai` | "add AI to the app", "chatbot feature", "Claude API", "add RAG/LLM feature" | AI Integration | Module-backed (`ai-integration.md`, `ai-security.md`, `data/ai/*.csv`, `scripts/ai/generate.py`) — always pair with the LLM security checklist before shipping user-facing AI |
+| `measure` | "add analytics", "set up GA4/PostHog", "track conversions", "funnel/retention analysis" | Analytics | Module-backed (`analytics-measurement.md`, `data/analytics/*.csv`, `scripts/analytics/generate.py`, `scripts/common/score.py`) — paid-media tracking overlaps live in the Ads module (`ADS051–ADS064`) |
 | `review` / `audit` | "review this codebase", "full audit", "pre-launch check" | Cross-module | `references/workflows.md` — Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass chains, combining every module's checks/scripts |
 
 ## Graceful Degradation Rule
 
-All 10 modules are now built (Phases 0-9 + B1 complete) — every row in the table above is module-backed. If a future module is ever added to this skill and marked 🔜 Planned, the same rule applies: still help using general best practice, never refuse, but say explicitly the answer isn't backed by this skill's own checklist/data yet, so the user knows the difference between "verified against our checklist" and "general knowledge."
+All 11 modules are now built (Phases 0-9 + B1-B2 complete) — every row in the table above is module-backed. If a future module is ever added to this skill and marked 🔜 Planned, the same rule applies: still help using general best practice, never refuse, but say explicitly the answer isn't backed by this skill's own checklist/data yet, so the user knows the difference between "verified against our checklist" and "general knowledge."
 
 ## Cross-Module Workflows
 

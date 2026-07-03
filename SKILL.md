@@ -1,16 +1,16 @@
 ---
 name: fullstack-pro-max
-description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); and AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security). Actions: plan, build, design, integrate, integrate-ai, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
+description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); and analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking). Actions: plan, build, design, integrate, integrate-ai, measure, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   last_updated: "2026-07-03"
 ---
 
 # Fullstack Pro Max — Full-Stack Product Delivery
 
-One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, and AI feature integration. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
+One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI feature integration, and analytics & measurement. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
 
-All 10 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
+All 11 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration, Analytics) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
 
 ## When to Apply
 
@@ -68,6 +68,7 @@ This skill defaults to asking clarifying questions before starting non-trivial w
 | `optimize-seo` | ✅ Built | SEO | `references/seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md`, `data/seo/*.csv`, `scripts/common/score.py` |
 | `launch-ads` | ✅ Built | Ads | `references/ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md`, `data/ads/*.csv`, `scripts/common/score.py` |
 | `integrate-ai` | ✅ Built | AI Integration | `references/ai-integration.md`, `references/ai-security.md`, `data/ai/*.csv`, `scripts/ai/generate.py`, `scripts/common/score.py` |
+| `measure` | ✅ Built | Analytics | `references/analytics-measurement.md`, `data/analytics/*.csv`, `scripts/analytics/generate.py`, `scripts/common/score.py` |
 | `review` / `audit` | ✅ Built | All (cross-module) | `references/workflows.md` — chains the module-specific checks/scripts above into Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass sequences |
 
 Full detail, trigger phrases, and the graceful-degradation rule live in [`references/routing.md`](references/routing.md) — load it whenever an action doesn't obviously map to a single file above.
@@ -133,6 +134,12 @@ Adding AI features to a product with the Claude API: model tier selection (Fable
 - References: `references/ai-integration.md`, `references/ai-security.md`
 - Script: `scripts/ai/generate.py` — scaffolds a streaming Claude chat endpoint (Next.js App Router/Express/FastAPI) with auth, rate-limit, and input-cap hooks baked in. `python3 scripts/ai/generate.py --help`.
 
+### Analytics & Measurement — ✅ Built (Phase B2)
+Platform selection (GA4/Plausible/Umami for web, PostHog/Mixpanel/Amplitude for product, warehouse-first, server-side tagging), event design that survives redesigns (object_action taxonomy, track plan as code, identity at the auth boundary, server-side revenue events), funnels/retention/north-star discipline, and a 12-check measurement checklist (PII-free events, consent gating, revenue reconciliation, UTM hygiene, pipeline alerts). Paid-media tracking stays in the Ads module — the two share dedup/consent/UTM rules.
+- Data: `data/analytics/platform-selection.csv` (12 rows), `event-tracking-patterns.csv` (10 rows), `measurement-checklist.csv` (12 checks)
+- Reference: `references/analytics-measurement.md`
+- Script: `scripts/analytics/generate.py` — scaffolds a typed track-plan module (PostHog/GA4/Plausible) with consent guard and naming validation. `python3 scripts/analytics/generate.py --help`.
+
 ## Stack Selection Logic
 
 Default recommendation for a greenfield project with no strong constraint pointing elsewhere: **Next.js (API Routes) + Supabase**. It covers the majority of MVP, SaaS, and agency-site builds with the least new infrastructure to learn, and both have first-class MCP tooling available when connected in your environment.
@@ -168,3 +175,4 @@ All scripts are Python 3, **stdlib-only** (no `requirements.txt`, no vendored ve
 - `scripts/ecommerce/generate.py` — scaffold a Stripe or Shopify webhook handler (Next.js/Express/FastAPI). `python3 scripts/ecommerce/generate.py --help`.
 - `scripts/common/validate.py` — validate every `data/**/*.csv` against the shared schemas in `references/conventions.md` (ID prefixes, uniqueness, severities, dates). Run after authoring or editing any data row. `python3 scripts/common/validate.py --help`.
 - `scripts/ai/generate.py` — scaffold a streaming Claude chat endpoint (Next.js/Express/FastAPI) with auth, rate-limit, and input-cap hooks. `python3 scripts/ai/generate.py --help`.
+- `scripts/analytics/generate.py` — scaffold a typed track-plan module (PostHog/GA4/Plausible) from a list of event names. `python3 scripts/analytics/generate.py --help`.

@@ -54,6 +54,7 @@ Both schemas share `id`, `category`, `tags`, `last_verified` so `scripts/common/
 | SEO | `SEO` | `SEO048` |
 | Ads | `ADS` | `ADS017` |
 | AI Integration | `AI` | `AI028` |
+| Analytics | `AN` | `AN014` |
 
 IDs are stable once published — never renumber an existing row when adding new ones (append, don't reorder), since a future scoring script or cross-reference may point at a specific ID.
 

@@ -1,0 +1,63 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate CSV data (schema, ID prefixes, severities, dates)
+        run: python3 scripts/common/validate.py
+
+      - name: Smoke-test every script (--help)
+        run: |
+          for s in scripts/*/*.py; do
+            python3 "$s" --help > /dev/null
+            echo "OK $s"
+          done
+
+      - name: Sample runs (search + every generator, dry-run)
+        run: |
+          python3 scripts/common/search.py data/backend/stacks.csv --query edge > /dev/null
+          python3 scripts/backend/generate.py posts --stack nextjs-api --dry-run > /dev/null
+          python3 scripts/database/generate.py posts --target supabase --rls --dry-run > /dev/null
+          python3 scripts/devops/generate.py --stack node --platform vercel --dry-run > /dev/null
+          python3 scripts/testing/generate.py checkout --framework vitest --dry-run > /dev/null
+          python3 scripts/security/generate.py --stack nextjs --dry-run > /dev/null
+          python3 scripts/ecommerce/generate.py --provider stripe --stack nextjs-api --dry-run > /dev/null
+          python3 scripts/ai/generate.py --stack nextjs-api --dry-run > /dev/null
+          python3 scripts/analytics/generate.py signup_completed --provider posthog --dry-run > /dev/null
+          python3 scripts/email/generate.py --provider resend --stack node --dry-run > /dev/null
+          python3 scripts/i18n/generate.py en tr --library next-intl --dry-run > /dev/null
+          python3 scripts/ui-ux/generate.py --palette UX091 --type UX103 --style UX130 --components hero,form --dry-run > /dev/null
+
+      - name: Check internal file references resolve
+        run: |
+          python3 - <<'EOF'
+          import re, sys
+          from pathlib import Path
+          root = Path(".")
+          pattern = re.compile(r"\b((?:references|data|scripts)/[\w\-./]+\.(?:md|csv|py))\b")
+          missing = []
+          sources = [Path("SKILL.md"), Path("README.md"), *Path("references").glob("*.md")]
+          for src in sources:
+              for ref in set(pattern.findall(src.read_text(encoding="utf-8"))):
+                  if not (root / ref).exists():
+                      missing.append(f"{src}: {ref}")
+          if missing:
+              print("\n".join(f"MISSING {m}" for m in missing))
+              sys.exit(1)
+          print(f"OK: all internal file references in {len(sources)} docs resolve.")
+          EOF
+
+      - name: Self-scan with the skill's own security audit script
+        run: python3 scripts/security/audit.py .

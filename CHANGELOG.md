@@ -2,6 +2,12 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.10.0] — 2026-07-03
+
+### Added
+- **Reference-driven design**: when a user describes a desired theme by pointing at example site(s) instead of describing it in words, the UI/UX module now turns those URLs into a written Reference Design Brief before any frontend code is generated. `references/reference-site-analysis.md` documents the process — read with `WebFetch` for structure/copy tone, real computed styles via a live browser tool (Claude Preview / claude-in-chrome) when available, or a cheap offline first pass via the new `scripts/ui-ux/scan.py` (stdlib-only: fetches HTML + same-origin CSS, extracts color frequency, `font-family` declarations, layout keyword hits — no JS rendering). Explicit rule: extract principles, never copy literal assets/copy from the reference.
+- `data/ui-ux/reference-analysis-checklist.csv` (`UX078-UX087`, 10 checks): covers the failure modes specific to this workflow — copying instead of extracting, eyeballing colors instead of measuring them, stitching mismatched references into a collage, skipping mobile, and inheriting a reference site's accessibility problems. UI/UX module total: 77 → 87 rows.
+
 ## [0.9.1] — 2026-07-03
 
 ### Added
@@ -68,6 +74,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.10.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.0
 [0.9.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.1
 [0.9.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.0
 [0.8.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.8.0

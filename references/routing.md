@@ -14,7 +14,7 @@ Load this file first when an action doesn't obviously map to a single file. It t
 | Testing/QA | ✅ Built | 4 | `data/testing/*.csv` | `testing-strategy.md`, `accessibility-performance-audit.md` |
 | Security/Cybersecurity | ✅ Built | 5 | `data/security/*.csv` (134 checks) | `security-threat-modeling.md`, `secure-coding-standards.md`, `api-security.md`, `infra-cloud-security.md`, `incident-response.md`, `security-scoring.md` |
 | E-commerce & Payments | ✅ Built | 6 | `data/ecommerce/*.csv` | `stripe-integration.md`, `shopify-integration.md` |
-| UI/UX & Distinctive Frontend | ✅ Built | 7 | `data/ui-ux/*.csv` (77 rows) | `ui-ux-quickref.md`, `frontend-distinctiveness.md` (flagship) |
+| UI/UX & Distinctive Frontend | ✅ Built | 7 | `data/ui-ux/*.csv` (87 rows) | `ui-ux-quickref.md`, `frontend-distinctiveness.md` (flagship), `reference-site-analysis.md` |
 | SEO | ✅ Built | 8 | `data/seo/*.csv` (112 rows) | `seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md` |
 | Ads | ✅ Built | 9 | `data/ads/*.csv` (74 rows) | `ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md` |
 | AI Integration | ✅ Built | B1 | `data/ai/*.csv` (43 rows) | `ai-integration.md`, `ai-security.md` |
@@ -30,7 +30,7 @@ Update this table (and the mirrored summary in `SKILL.md`) in the same edit when
 |---|---|---|---|
 | `plan` | "plan this app", "what stack should I use", "architecture for X" | Backend (stack selection) + Database + DevOps | All three module-backed — `backend-architecture.md` (Stack Decision Tree), `database-schema-design.md`, `deployment-platforms.md` |
 | `build` | "build the API", "scaffold backend", "implement endpoint" | Backend | — (built) |
-| `design` | "design the UI", "make this look unique", "landing page design" | UI/UX & Distinctive Frontend | Module-backed — always load `references/frontend-distinctiveness.md` for brand-forward work (marketing/landing/portfolio pages); `ui-ux-quickref.md` for color/type/UX fundamentals |
+| `design` | "design the UI", "make this look unique", "landing page design", "make it look like <site>" | UI/UX & Distinctive Frontend | Module-backed — always load `references/frontend-distinctiveness.md` for brand-forward work (marketing/landing/portfolio pages); `ui-ux-quickref.md` for color/type/UX fundamentals; if the user supplies example site URL(s), also `references/reference-site-analysis.md` + `scripts/ui-ux/scan.py` |
 | `integrate` | "add auth", "connect database", "add Stripe" | Database & Auth / E-commerce | Both module-backed — Database & Auth (`database-schema-design.md`, `auth-patterns.md`, `scripts/database/generate.py`) and E-commerce (`stripe-integration.md`, `shopify-integration.md`, `scripts/ecommerce/generate.py`) |
 | `deploy` | "deploy to Vercel", "set up CI/CD" | DevOps & Deployment | Module-backed (`ci-cd-pipelines.md`, `deployment-platforms.md`, `env-secrets-management.md`, `scripts/devops/generate.py`) — combine with the connected Vercel/Netlify/Cloudflare MCP tools directly |
 | `test` | "write tests", "test coverage", "e2e strategy" | Testing/QA | Module-backed (`testing-strategy.md`, `accessibility-performance-audit.md`, `scripts/testing/generate.py`) |

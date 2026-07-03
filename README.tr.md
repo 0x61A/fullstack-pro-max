@@ -22,7 +22,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **Test/QA** | Stack'e göre test stratejisi, erişilebilirlik + Core Web Vitals kontrol listesi |
 | **Güvenlik/Siber Güvenlik** | 134 kontrol: OWASP Top 10, STRIDE tehdit modelleme, stack'e göre güvenli kodlama, API/altyapı/tedarik zinciri güvenliği, olay müdahalesi — artı stdlib statik secret/desen tarayıcısı |
 | **E-ticaret & Ödemeler** | Stripe + Shopify entegrasyon desenleri, imza doğrulamalı webhook iskeleti |
-| **UI/UX & Özgün Frontend** | "Jenerik AI tasarımı" karşıtı el kitabı — şablon görünümünden kaçınmak için yerleşim/tipografi/hareket teknikleri |
+| **UI/UX & Özgün Frontend** | "Jenerik AI tasarımı" karşıtı el kitabı — şablon görünümünden kaçınmak için yerleşim/tipografi/hareket teknikleri; kullanıcının verdiği örnek site linklerini kod yazmadan önce bir Referans Tasarım Brief'ine dönüştürür |
 | **SEO** | 112 kontrol: teknik, on-page, içerik/E-E-A-T, schema seçimi, GEO/AI atıf edilebilirliği, yerel SEO (GBP/NAP/yorumlar) |
 | **Reklam** | 74 kontrol: Google/Meta/LinkedIn/TikTok/Microsoft + platformlar arası izleme/atıf + kreatif/bütçe disiplini |
 | **AI Entegrasyonu** | Claude API: model seçimi & yönlendirme, streaming endpoint'ler, tool use, RAG, prompt cache/maliyet kontrolü, eval disiplini, 16 LLM güvenlik kontrolü (OWASP LLM Top 10) |
@@ -30,7 +30,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **E-posta** | Resend/Postmark/SES seçimi, kuyruklu idempotent gönderim, 14 deliverability kontrolü (SPF/DKIM/DMARC, toplu gönderici kuralları, warmup) |
 | **i18n / Yerelleştirme** | next-intl/react-i18next seçimi, URL stratejisi, hreflang, RTL, ICU çoğullama, 12 l10n kontrolü |
 
-~839 veri satırı, 34 referans dokümanı, 14 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~849 veri satırı, 35 referans dokümanı, 15 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 
@@ -59,6 +59,7 @@ python3 scripts/security/audit.py ./projem                                 # sec
 python3 scripts/backend/generate.py posts --stack nextjs-api               # CRUD endpoint iskeleti
 python3 scripts/common/validate.py                                          # tüm veri CSV'lerini doğrula (CI ile aynı)
 python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # streaming Claude chat endpoint'i
+python3 scripts/ui-ux/scan.py https://ornek-site.com                        # referans sitenin renk/font/layout ipuçlarını tara
 ```
 
 ## Notlar

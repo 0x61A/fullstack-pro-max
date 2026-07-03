@@ -41,6 +41,8 @@ def render_nextjs() -> str:
 // if you need per-route variation.
 
 /** @type {{import('next').NextConfig}} */
+const isDev = process.env.NODE_ENV !== "production";
+
 const securityHeaders = [
   {{
     key: "Content-Security-Policy",
@@ -57,6 +59,13 @@ const securityHeaders = [
 
 module.exports = {{
   async headers() {{
+    // Dev-only skip: Next.js dev mode bundles/HMR execute via eval(), which a
+    // strict script-src 'self' silently blocks -- every client script fails and
+    // the page renders blank with zero console errors. frame-ancestors 'none' /
+    // X-Frame-Options DENY also break local iframe-based preview tooling.
+    // Neither concern exists in a real deployment; the strict baseline above
+    // applies as-is to the production build.
+    if (isDev) return [];
     return [
       {{
         source: "/:path*",

@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.10.1] — 2026-07-03
+
+### Fixed
+- `scripts/security/generate.py` (Next.js template): the generated strict CSP broke local development — Next.js dev mode bundles/HMR execute via `eval()`, which `script-src 'self'` silently blocks (page renders blank, zero console errors), and `frame-ancestors 'none'`/`X-Frame-Options: DENY` break iframe-based local preview tooling. The template now skips the headers when `NODE_ENV !== "production"`; the strict SEC018 baseline still applies unchanged to production builds. Found in real use scaffolding a test project with this skill.
+
 ## [0.10.0] — 2026-07-03
 
 ### Added
@@ -74,6 +79,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.10.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.1
 [0.10.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.0
 [0.9.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.1
 [0.9.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.0

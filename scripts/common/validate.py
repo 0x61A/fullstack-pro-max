@@ -23,6 +23,7 @@ SEVERITIES = {"Critical", "High", "Medium", "Low"}
 
 # module directory -> allowed ID prefix (see conventions.md "Check-ID Prefixes")
 PREFIXES = {
+    "ai": "AI",
     "backend": "BE",
     "database": "DB",
     "devops": "DO",

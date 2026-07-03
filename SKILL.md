@@ -1,16 +1,16 @@
 ---
 name: fullstack-pro-max
-description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; and e-commerce payments (Stripe, Shopify). Actions: plan, build, design, integrate, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
+description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); and AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security). Actions: plan, build, design, integrate, integrate-ai, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   last_updated: "2026-07-03"
 ---
 
 # Fullstack Pro Max — Full-Stack Product Delivery
 
-One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, and e-commerce payments. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
+One skill for shipping a real product end to end: distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, and AI feature integration. Built for two use cases — agency/client delivery and personal SaaS builds — with adaptive stack selection rather than one fixed frontend+backend combo.
 
-All 9 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
+All 10 modules (Backend, Database & Auth, DevOps, Testing/QA, Security, E-commerce, UI/UX, SEO, Ads, AI Integration) are built — see `references/routing.md` for the full action-to-file map. If a future module is ever added and not yet built, this skill degrades gracefully: reason from general best practice and say so explicitly, rather than refusing.
 
 ## When to Apply
 
@@ -67,6 +67,7 @@ This skill defaults to asking clarifying questions before starting non-trivial w
 | `integrate-payments` | ✅ Built | E-commerce & Payments | `references/stripe-integration.md`, `shopify-integration.md`, `scripts/ecommerce/generate.py`, plus the connected Shopify MCP tools |
 | `optimize-seo` | ✅ Built | SEO | `references/seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md`, `data/seo/*.csv`, `scripts/common/score.py` |
 | `launch-ads` | ✅ Built | Ads | `references/ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md`, `data/ads/*.csv`, `scripts/common/score.py` |
+| `integrate-ai` | ✅ Built | AI Integration | `references/ai-integration.md`, `references/ai-security.md`, `data/ai/*.csv`, `scripts/ai/generate.py`, `scripts/common/score.py` |
 | `review` / `audit` | ✅ Built | All (cross-module) | `references/workflows.md` — chains the module-specific checks/scripts above into Complete SaaS Launch, Client Delivery Package, Pre-Launch Audit, and Security Hardening Pass sequences |
 
 Full detail, trigger phrases, and the graceful-degradation rule live in [`references/routing.md`](references/routing.md) — load it whenever an action doesn't obviously map to a single file above.
@@ -126,6 +127,12 @@ Google/Meta/LinkedIn/TikTok/Microsoft ad audits, plus cross-platform tracking & 
 - References: `references/ads-google.md`, `references/ads-meta.md`, `references/ads-other-platforms.md`, `references/ads-scoring-system.md` (also covers cross-platform tracking/attribution)
 - Scoring: reuses `scripts/common/score.py`
 
+### AI Integration — ✅ Built (Phase B1)
+Adding AI features to a product with the Claude API: model tier selection (Fable 5 / Opus 4.8 / Sonnet 5 / Haiku 4.5 with tiered routing), streaming SSE endpoints, tool use, RAG over pgvector, prompt caching and cost control, eval discipline (golden sets, LLM-as-judge), and a 16-check LLM security checklist mapped to the OWASP LLM Top 10 (prompt injection, insecure output handling, excessive agency, denial-of-wallet).
+- Data: `data/ai/model-selection.csv` (14 rows), `data/ai/integration-patterns.csv` (13 rows), `data/ai/llm-security-checks.csv` (16 checks)
+- References: `references/ai-integration.md`, `references/ai-security.md`
+- Script: `scripts/ai/generate.py` — scaffolds a streaming Claude chat endpoint (Next.js App Router/Express/FastAPI) with auth, rate-limit, and input-cap hooks baked in. `python3 scripts/ai/generate.py --help`.
+
 ## Stack Selection Logic
 
 Default recommendation for a greenfield project with no strong constraint pointing elsewhere: **Next.js (API Routes) + Supabase**. It covers the majority of MVP, SaaS, and agency-site builds with the least new infrastructure to learn, and both have first-class MCP tooling available when connected in your environment.
@@ -160,3 +167,4 @@ All scripts are Python 3, **stdlib-only** (no `requirements.txt`, no vendored ve
 - `scripts/common/score.py` — compute a severity-weighted score from any checklist-schema CSV against a results file. `python3 scripts/common/score.py --help`.
 - `scripts/ecommerce/generate.py` — scaffold a Stripe or Shopify webhook handler (Next.js/Express/FastAPI). `python3 scripts/ecommerce/generate.py --help`.
 - `scripts/common/validate.py` — validate every `data/**/*.csv` against the shared schemas in `references/conventions.md` (ID prefixes, uniqueness, severities, dates). Run after authoring or editing any data row. `python3 scripts/common/validate.py --help`.
+- `scripts/ai/generate.py` — scaffold a streaming Claude chat endpoint (Next.js/Express/FastAPI) with auth, rate-limit, and input-cap hooks. `python3 scripts/ai/generate.py --help`.

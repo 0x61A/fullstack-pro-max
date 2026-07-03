@@ -6,13 +6,13 @@
 
 *Türkçe sürüm: [README.tr.md](README.tr.md)*
 
-A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, and e-commerce payments — with adaptive stack selection rather than one fixed frontend+backend combo.
+A single, self-contained [Claude Code](https://claude.com/claude-code) skill for shipping a real web product end to end — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, and AI feature integration — with adaptive stack selection rather than one fixed frontend+backend combo.
 
 Built for two use cases: agency/client delivery and personal SaaS builds.
 
 ## What's inside
 
-Nine modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
+Ten modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts:
 
 | Module | Coverage |
 |---|---|
@@ -25,8 +25,9 @@ Nine modules, each backed by structured data (CSV), on-demand reference docs, an
 | **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — layout/type/motion techniques for non-templated design |
 | **SEO** | 92 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability |
 | **Ads** | 64 checks: Google/Meta/LinkedIn/TikTok/Microsoft + cross-platform tracking/attribution |
+| **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
 
-~644 data rows, 29 reference docs, 10 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~687 data rows, 31 reference docs, 11 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 
@@ -82,12 +83,13 @@ python3 scripts/common/score.py data/security --results results.json       # sev
 python3 scripts/security/audit.py ./my-project                             # static scan for secrets/dangerous patterns
 python3 scripts/backend/generate.py posts --stack nextjs-api               # scaffold a CRUD endpoint
 python3 scripts/common/validate.py                                          # validate all data CSVs (same check CI runs)
+python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # streaming Claude chat endpoint
 ```
 
 ## Notes
 
 - **Original content, self-contained.** No runtime dependency on any other skill.
-- **CI eats its own dog food.** Every push validates all 644 data rows against the shared schema, smoke-tests every script, checks that internal file references resolve, and scans the repo with the skill's own `scripts/security/audit.py`.
+- **CI eats its own dog food.** Every push validates all data rows against the shared schema, smoke-tests every script, checks that internal file references resolve, and scans the repo with the skill's own `scripts/security/audit.py`.
 - **Guidance, not a guarantee.** The security, payments, SEO, and ads material is a strong starting point — validate it against your own project's context, compliance requirements, and current platform docs before relying on it in production.
 
 ## License

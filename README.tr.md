@@ -6,13 +6,13 @@
 
 *English version: [README.md](README.md)*
 
-Gerçek bir web ürününü uçtan uca çıkarmak için tek parça, kendi kendine yeten bir [Claude Code](https://claude.com/claude-code) skill'i — özgün (şablon görünümlü olmayan) UI/UX, backend mimarisi, veritabanı & auth, deployment, test, siber güvenlik, SEO, reklam ve e-ticaret ödemeleri. Tek bir sabit frontend+backend ikilisine kilitlenmek yerine projeye göre uyarlanan stack seçimi yapar.
+Gerçek bir web ürününü uçtan uca çıkarmak için tek parça, kendi kendine yeten bir [Claude Code](https://claude.com/claude-code) skill'i — özgün (şablon görünümlü olmayan) UI/UX, backend mimarisi, veritabanı & auth, deployment, test, siber güvenlik, SEO, reklam, e-ticaret ödemeleri ve AI özellik entegrasyonu. Tek bir sabit frontend+backend ikilisine kilitlenmek yerine projeye göre uyarlanan stack seçimi yapar.
 
 İki kullanım senaryosu için tasarlandı: ajans/müşteri teslimatı ve kişisel SaaS projeleri.
 
 ## İçinde ne var
 
-Dokuz modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklenen referans dokümanları ve yalnızca stdlib kullanan Python script'leriyle destekleniyor:
+On modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklenen referans dokümanları ve yalnızca stdlib kullanan Python script'leriyle destekleniyor:
 
 | Modül | Kapsam |
 |---|---|
@@ -25,8 +25,9 @@ Dokuz modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklen
 | **UI/UX & Özgün Frontend** | "Jenerik AI tasarımı" karşıtı el kitabı — şablon görünümünden kaçınmak için yerleşim/tipografi/hareket teknikleri |
 | **SEO** | 92 kontrol: teknik, on-page, içerik/E-E-A-T, schema seçimi, GEO/AI atıf edilebilirliği |
 | **Reklam** | 64 kontrol: Google/Meta/LinkedIn/TikTok/Microsoft + platformlar arası izleme/atıf |
+| **AI Entegrasyonu** | Claude API: model seçimi & yönlendirme, streaming endpoint'ler, tool use, RAG, prompt cache/maliyet kontrolü, eval disiplini, 16 LLM güvenlik kontrolü (OWASP LLM Top 10) |
 
-~644 veri satırı, 29 referans dokümanı, 10 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~687 veri satırı, 31 referans dokümanı, 11 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 
@@ -54,12 +55,13 @@ python3 scripts/common/score.py data/security --results results.json       # ön
 python3 scripts/security/audit.py ./projem                                 # secret/tehlikeli desen taraması
 python3 scripts/backend/generate.py posts --stack nextjs-api               # CRUD endpoint iskeleti
 python3 scripts/common/validate.py                                          # tüm veri CSV'lerini doğrula (CI ile aynı)
+python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # streaming Claude chat endpoint'i
 ```
 
 ## Notlar
 
 - **Özgün içerik, kendi kendine yeten.** Başka hiçbir skill'e çalışma zamanı bağımlılığı yok.
-- **CI kendi ilacını içiyor.** Her push'ta 644 veri satırı ortak şemaya göre doğrulanır, tüm script'ler smoke-test edilir, dosya referansları kontrol edilir ve depo, skill'in kendi `scripts/security/audit.py` script'iyle taranır.
+- **CI kendi ilacını içiyor.** Her push'ta tüm veri satırları ortak şemaya göre doğrulanır, tüm script'ler smoke-test edilir, dosya referansları kontrol edilir ve depo, skill'in kendi `scripts/security/audit.py` script'iyle taranır.
 - **Rehberlik, garanti değil.** Güvenlik, ödeme, SEO ve reklam içeriği güçlü bir başlangıç noktasıdır — üretimde kullanmadan önce kendi projenizin bağlamına, uyumluluk gereksinimlerine ve güncel platform dokümanlarına göre doğrulayın.
 
 ## Lisans

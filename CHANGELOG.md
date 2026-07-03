@@ -2,6 +2,13 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.2.0] — 2026-07-03
+
+### Added
+- **AI Integration module** (10th module, `AI` prefix, action `integrate-ai`): 43 new data rows — `data/ai/model-selection.csv` (14: Claude model tiers, tiered routing, extended thinking, vision, embeddings, caching, Batch API, Agent SDK), `data/ai/integration-patterns.csv` (13: streaming SSE, tool use, RAG/pgvector, conversation state, evals, retries, semantic caching), `data/ai/llm-security-checks.csv` (16 checks mapped to the OWASP LLM Top 10).
+- `references/ai-integration.md` (model decision tree, cost model, RAG shape, quality gates) and `references/ai-security.md` (LLM threat model, OWASP LLM mapping, tool-use escalation, fail-closed rule).
+- `scripts/ai/generate.py`: scaffolds a streaming Claude chat endpoint for Next.js App Router, Express, or FastAPI — with auth check, rate-limit hook, input cap, and bounded `max_tokens` baked in.
+
 ## [0.1.0] — 2026-07-03
 
 First public release.
@@ -13,4 +20,5 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.2.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.2.0
 [0.1.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.1.0

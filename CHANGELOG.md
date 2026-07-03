@@ -2,6 +2,13 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.11.0] — 2026-07-04
+
+### Added
+- **UI/UX module gets its first generator**: `scripts/ui-ux/generate.py` scaffolds design tokens (`design-tokens.css` with color/font/motion CSS variables + `tailwind.config.ts`) from a `colors.csv`/`typography.csv` row id or explicit `--colors`/`--fonts` values, plus optional TODO-marked component skeletons (`--components hero,nav,feature,footer,cta,sidebar,table,form,empty-state`) for `--stack react-tailwind` or plain `html`. Palette role extraction is label-aware (`#hex base`, `accent #hex`) with saturation-threshold fallbacks, and warns instead of guessing when a palette row names no accent hex. Skeletons are deliberately unfinished — TODO structure plus checklist pointers (UX034/044/045/050 etc.), not finished pages.
+- **37 new UI/UX data rows** (`UX088-UX124`, module total 87 → 124): `colors.csv` +10 palettes (near-black SaaS dark, neon-on-charcoal, e-ink zero-accent, terracotta, pastel professional, forest+brass, monochrome+red, ocean gradient, Mediterranean, high-vis utility); `typography.csv` +7 pairings (variable grotesk single-family, didone display, monospace display, rounded sans, condensed, slab serif, serif-body/sans-UI split); new `motion-recipes.csv` (10 purpose-driven animation patterns with concrete duration/easing values — stagger reveal, press depth, skeleton shimmer, streaming cursor, optimistic settle, motion tokens); new `responsive-patterns.csv` (10 layout-collapse strategies — rail→drawer, bottom tabs, table→cards, fluid type via clamp(), container queries, art-directed crops).
+- **`scan.py` v2**: multiple reference URLs with shared-thread analysis (common colors/font classes/layout keywords — UX083), rough WCAG contrast-ratio estimates on frequent color pairs (UX086 hint), and `--brief` emitting a pre-filled Reference Design Brief markdown draft with TODO markers.
+
 ## [0.10.1] — 2026-07-03
 
 ### Fixed
@@ -79,6 +86,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.11.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.11.0
 [0.10.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.1
 [0.10.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.0
 [0.9.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.1

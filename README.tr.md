@@ -30,7 +30,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **E-posta** | Resend/Postmark/SES seçimi, kuyruklu idempotent gönderim, 14 deliverability kontrolü (SPF/DKIM/DMARC, toplu gönderici kuralları, warmup) |
 | **i18n / Yerelleştirme** | next-intl/react-i18next seçimi, URL stratejisi, hreflang, RTL, ICU çoğullama, 12 l10n kontrolü |
 
-~849 veri satırı, 35 referans dokümanı, 15 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~886 veri satırı, 35 referans dokümanı, 16 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 
@@ -59,7 +59,8 @@ python3 scripts/security/audit.py ./projem                                 # sec
 python3 scripts/backend/generate.py posts --stack nextjs-api               # CRUD endpoint iskeleti
 python3 scripts/common/validate.py                                          # tüm veri CSV'lerini doğrula (CI ile aynı)
 python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # streaming Claude chat endpoint'i
-python3 scripts/ui-ux/scan.py https://ornek-site.com                        # referans sitenin renk/font/layout ipuçlarını tara
+python3 scripts/ui-ux/scan.py https://a.com https://b.com --brief           # örnek sitelerden Referans Tasarım Brief taslağı
+python3 scripts/ui-ux/generate.py --palette UX088 --components hero,nav      # design token + bileşen iskeletleri
 ```
 
 ## Notlar

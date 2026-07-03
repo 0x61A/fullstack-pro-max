@@ -30,7 +30,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 | **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~849 data rows, 35 reference docs, 15 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~886 data rows, 35 reference docs, 16 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 
@@ -87,7 +87,8 @@ python3 scripts/security/audit.py ./my-project                             # sta
 python3 scripts/backend/generate.py posts --stack nextjs-api               # scaffold a CRUD endpoint
 python3 scripts/common/validate.py                                          # validate all data CSVs (same check CI runs)
 python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # streaming Claude chat endpoint
-python3 scripts/ui-ux/scan.py https://example.com                           # scan a reference site's color/font/layout hints
+python3 scripts/ui-ux/scan.py https://a.com https://b.com --brief           # draft a Reference Design Brief from example sites
+python3 scripts/ui-ux/generate.py --palette UX088 --components hero,nav      # design tokens + component skeletons
 ```
 
 ## Notes

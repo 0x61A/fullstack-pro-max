@@ -78,11 +78,22 @@ def redact(value: str) -> str:
     return value[:4] + "…" + value[-2:]
 
 
-def iter_source_files(root: Path):
+def iter_source_files(root: Path, excludes=()):
+    # This script's own pattern definitions would always match themselves, so
+    # skip this file whenever it happens to live inside the scanned tree.
+    self_path = Path(__file__).resolve()
     for path in root.rglob("*"):
         if not path.is_file():
             continue
+        if path.resolve() == self_path:
+            continue
         if any(part in EXCLUDED_DIRS for part in path.parts):
+            continue
+        try:
+            rel = path.relative_to(root)
+        except ValueError:
+            rel = path
+        if any(str(rel).startswith(e) for e in excludes):
             continue
         if path.suffix in SCAN_EXTENSIONS:
             yield path
@@ -144,6 +155,8 @@ def main():
     parser.add_argument("--format", choices=["text", "json"], default="text")
     parser.add_argument("--severity", choices=["critical", "high", "medium", "low"], default="low",
                          help="Minimum severity to report (default: low, i.e. everything)")
+    parser.add_argument("--exclude", action="append", default=[], metavar="PATH",
+                         help="Path prefix (relative to the scan root) to skip; repeatable")
     args = parser.parse_args()
 
     if not args.path.is_dir():
@@ -151,7 +164,7 @@ def main():
         sys.exit(2)
 
     findings = []
-    for f in iter_source_files(args.path):
+    for f in iter_source_files(args.path, args.exclude):
         findings.extend(scan_file(f, SECRET_PATTERNS))
         findings.extend(scan_file(f, DANGEROUS_PATTERNS))
 

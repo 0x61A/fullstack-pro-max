@@ -159,3 +159,4 @@ All scripts are Python 3, **stdlib-only** (no `requirements.txt`, no vendored ve
 - `scripts/security/audit.py` — static-scan a project for hardcoded secrets, dangerous code patterns, and missing security headers. `python3 scripts/security/audit.py --help`.
 - `scripts/common/score.py` — compute a severity-weighted score from any checklist-schema CSV against a results file. `python3 scripts/common/score.py --help`.
 - `scripts/ecommerce/generate.py` — scaffold a Stripe or Shopify webhook handler (Next.js/Express/FastAPI). `python3 scripts/ecommerce/generate.py --help`.
+- `scripts/common/validate.py` — validate every `data/**/*.csv` against the shared schemas in `references/conventions.md` (ID prefixes, uniqueness, severities, dates). Run after authoring or editing any data row. `python3 scripts/common/validate.py --help`.

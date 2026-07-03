@@ -23,14 +23,14 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Security/Cybersecurity** | 124 checks: OWASP Top 10, STRIDE threat modeling, secure coding per stack, API/infra security, incident response — plus a stdlib static secret/pattern scanner |
 | **E-commerce & Payments** | Stripe + Shopify integration patterns, signature-verified webhook scaffolds |
 | **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — layout/type/motion techniques for non-templated design |
-| **SEO** | 92 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability |
+| **SEO** | 112 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability, local SEO (GBP/NAP/reviews) |
 | **Ads** | 64 checks: Google/Meta/LinkedIn/TikTok/Microsoft + cross-platform tracking/attribution |
 | **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
 | **Analytics** | GA4/PostHog/Plausible selection, event taxonomy & track-plan-as-code, funnels/retention, consent-compliant measurement |
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 | **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~789 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~809 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

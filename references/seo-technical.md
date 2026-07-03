@@ -1,8 +1,12 @@
-> Last updated: 2026-07-03 · Module version: 0.1
+> Last updated: 2026-07-03 · Module version: 0.2
 
 # Technical SEO
 
 Pairs with `data/seo/technical-seo-checks.csv` (34 checks) and `data/seo/onpage-checks.csv` (23 checks) — query via `scripts/common/search.py`.
+
+## Local SEO — a 20-check addition (`data/seo/local-seo-checks.csv`, SEO093-SEO112)
+
+For any brick-and-mortar, service-area, or multi-location business, local signals dominate over generic technical SEO. The core discipline: **GBP claimed and correctly categorized** (`SEO094`), **NAP identical everywhere** — site, GBP, every directory, in crawlable HTML not just inside a map embed (`SEO096`/`SEO097`), and **`LocalBusiness` schema matching the visible page exactly** (`SEO100`/`SEO101`). Location pages need genuinely unique content per location, not a city-name find-and-replace (`SEO105` — Critical, this is a documented thin-content penalty risk at scale). Service-area businesses (no public storefront) must use GBP's service-area setting rather than a fake address (`SEO108` — Critical, fake storefronts risk suspension). Multi-location businesses need one GBP + one location page per physical address, centrally managed (`SEO111`/`SEO112`), never one profile covering several addresses.
 
 ## The Foundational Layer — Crawlability and Indexability
 

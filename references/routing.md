@@ -15,7 +15,7 @@ Load this file first when an action doesn't obviously map to a single file. It t
 | Security/Cybersecurity | ✅ Built | 5 | `data/security/*.csv` (124 checks) | `security-threat-modeling.md`, `secure-coding-standards.md`, `api-security.md`, `infra-cloud-security.md`, `incident-response.md`, `security-scoring.md` |
 | E-commerce & Payments | ✅ Built | 6 | `data/ecommerce/*.csv` | `stripe-integration.md`, `shopify-integration.md` |
 | UI/UX & Distinctive Frontend | ✅ Built | 7 | `data/ui-ux/*.csv` (67 rows) | `ui-ux-quickref.md`, `frontend-distinctiveness.md` (flagship) |
-| SEO | ✅ Built | 8 | `data/seo/*.csv` (92 rows) | `seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md` |
+| SEO | ✅ Built | 8 | `data/seo/*.csv` (112 rows) | `seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md` |
 | Ads | ✅ Built | 9 | `data/ads/*.csv` (64 rows) | `ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md` |
 | AI Integration | ✅ Built | B1 | `data/ai/*.csv` (43 rows) | `ai-integration.md`, `ai-security.md` |
 | Analytics | ✅ Built | B2 | `data/analytics/*.csv` (34 rows) | `analytics-measurement.md` |
@@ -36,7 +36,7 @@ Update this table (and the mirrored summary in `SKILL.md`) in the same edit when
 | `test` | "write tests", "test coverage", "e2e strategy" | Testing/QA | Module-backed (`testing-strategy.md`, `accessibility-performance-audit.md`, `scripts/testing/generate.py`) |
 | `secure` | "security audit", "OWASP check", "is this safe to ship" | Security/Cybersecurity | Module-backed: 124 checks across OWASP, threat modeling, secure coding, API security, infra/cloud, incident response — plus `scripts/security/audit.py` (static scan) and `scripts/common/score.py` (posture scoring) |
 | `integrate-payments` | "add Stripe", "Shopify checkout" | E-commerce & Payments | Module-backed (`stripe-integration.md`, `shopify-integration.md`, `scripts/ecommerce/generate.py`) + Shopify MCP tools |
-| `optimize-seo` | "SEO audit", "improve rankings" | SEO | Module-backed: 92 checks across technical, on-page, content/E-E-A-T, and schema-type selection (`data/seo/*.csv`), plus `scripts/common/score.py` for posture scoring |
+| `optimize-seo` | "SEO audit", "improve rankings" | SEO | Module-backed: 112 checks across technical, on-page, content/E-E-A-T, schema-type selection, and local SEO (`data/seo/*.csv`), plus `scripts/common/score.py` for posture scoring |
 | `launch-ads` | "set up ads", "ad campaign" | Ads | Module-backed: 64 checks across Google, Meta, LinkedIn/TikTok/Microsoft, and cross-platform tracking/attribution (`data/ads/*.csv`), plus `scripts/common/score.py` |
 | `integrate-ai` | "add AI to the app", "chatbot feature", "Claude API", "add RAG/LLM feature" | AI Integration | Module-backed (`ai-integration.md`, `ai-security.md`, `data/ai/*.csv`, `scripts/ai/generate.py`) — always pair with the LLM security checklist before shipping user-facing AI |
 | `measure` | "add analytics", "set up GA4/PostHog", "track conversions", "funnel/retention analysis" | Analytics | Module-backed (`analytics-measurement.md`, `data/analytics/*.csv`, `scripts/analytics/generate.py`, `scripts/common/score.py`) — paid-media tracking overlaps live in the Ads module (`ADS051–ADS064`) |

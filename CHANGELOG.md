@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.6.0] — 2026-07-03
+
+### Added
+- **Local SEO checks** (`data/seo/local-seo-checks.csv`, `SEO093-SEO112`, 20 checks): GBP claim/categorization/engagement, NAP consistency (site/GBP/directories, crawlable HTML), citations, `LocalBusiness` schema matching the visible page, review generation/response, unique per-location content (Critical — thin-content risk), service-area GBP setup (Critical — fake-storefront suspension risk), and multi-location NAP/GBP management. SEO module total: 92 → 112 checks. New section in `references/seo-technical.md`.
+
 ## [0.5.0] — 2026-07-03
 
 ### Added
@@ -43,6 +48,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.6.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.6.0
 [0.5.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.5.0
 [0.4.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.4.0
 [0.3.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.3.0

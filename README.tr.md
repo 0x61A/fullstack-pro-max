@@ -20,7 +20,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **Veritabanı & Auth** | Şema tasarımı, RLS/multi-tenancy, auth strateji matrisi, güvenli migration |
 | **DevOps & Deployment** | CI/CD, Vercel/Netlify/Cloudflare/Railway karar matrisi, env & secrets |
 | **Test/QA** | Stack'e göre test stratejisi, erişilebilirlik + Core Web Vitals kontrol listesi |
-| **Güvenlik/Siber Güvenlik** | 124 kontrol: OWASP Top 10, STRIDE tehdit modelleme, stack'e göre güvenli kodlama, API/altyapı güvenliği, olay müdahalesi — artı stdlib statik secret/desen tarayıcısı |
+| **Güvenlik/Siber Güvenlik** | 134 kontrol: OWASP Top 10, STRIDE tehdit modelleme, stack'e göre güvenli kodlama, API/altyapı/tedarik zinciri güvenliği, olay müdahalesi — artı stdlib statik secret/desen tarayıcısı |
 | **E-ticaret & Ödemeler** | Stripe + Shopify entegrasyon desenleri, imza doğrulamalı webhook iskeleti |
 | **UI/UX & Özgün Frontend** | "Jenerik AI tasarımı" karşıtı el kitabı — şablon görünümünden kaçınmak için yerleşim/tipografi/hareket teknikleri |
 | **SEO** | 112 kontrol: teknik, on-page, içerik/E-E-A-T, schema seçimi, GEO/AI atıf edilebilirliği, yerel SEO (GBP/NAP/yorumlar) |
@@ -30,7 +30,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **E-posta** | Resend/Postmark/SES seçimi, kuyruklu idempotent gönderim, 14 deliverability kontrolü (SPF/DKIM/DMARC, toplu gönderici kuralları, warmup) |
 | **i18n / Yerelleştirme** | next-intl/react-i18next seçimi, URL stratejisi, hreflang, RTL, ICU çoğullama, 12 l10n kontrolü |
 
-~809 veri satırı, 34 referans dokümanı, 14 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~819 veri satırı, 34 referans dokümanı, 14 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 

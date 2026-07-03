@@ -2,7 +2,7 @@
 name: fullstack-pro-max
 description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design; backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking); email (Resend/Postmark/SES selection, transactional sending patterns, SPF/DKIM/DMARC deliverability); and i18n/localization (next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization). Actions: plan, build, design, integrate, integrate-ai, integrate-email, measure, localize, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
 metadata:
-  version: "0.6.0"
+  version: "0.7.0"
   last_updated: "2026-07-03"
 ---
 
@@ -102,8 +102,8 @@ Test strategy by stack (unit/integration/e2e, tooling per stack, mocking/factory
 - Script: `scripts/testing/generate.py` — scaffolds a test file skeleton (Vitest/Jest/pytest/Playwright) for a named subject. `python3 scripts/testing/generate.py --help`.
 
 ### Security/Cybersecurity — ✅ Built (Phase 5, full-depth "big three" module)
-Genuine cybersecurity-expert depth, not a checklist skim: OWASP Top 10 mapped to concrete checks, STRIDE-based threat modeling, secure coding standards per stack (Node.js/Python/Next.js/Express/Django), API-specific security (BOLA, mass assignment, rate limiting, GraphQL complexity), infra/cloud security (IAM, network exposure, backups, DNS), and a full incident-response lifecycle (preparedness → detection → containment → eradication → blameless post-mortem). 124 checks total.
-- Data: `data/security/owasp-checklist.csv` (35), `threat-modeling-checks.csv` (20), `secure-coding-checks.csv` (20), `api-security-checks.csv` (15), `infra-cloud-security-checks.csv` (17), `incident-response-checklist.csv` (17)
+Genuine cybersecurity-expert depth, not a checklist skim: OWASP Top 10 mapped to concrete checks, STRIDE-based threat modeling, secure coding standards per stack (Node.js/Python/Next.js/Express/Django), API-specific security (BOLA, mass assignment, rate limiting, GraphQL complexity), infra/cloud security (IAM, network exposure, backups, DNS), supply-chain/dependency security (SCA, CI/CD pipeline hardening, SBOM), and a full incident-response lifecycle (preparedness → detection → containment → eradication → blameless post-mortem). 134 checks total.
+- Data: `data/security/owasp-checklist.csv` (35), `threat-modeling-checks.csv` (20), `secure-coding-checks.csv` (20), `api-security-checks.csv` (15), `infra-cloud-security-checks.csv` (17), `incident-response-checklist.csv` (17), `supply-chain-checks.csv` (10)
 - References: `references/security-threat-modeling.md`, `secure-coding-standards.md`, `api-security.md`, `infra-cloud-security.md`, `incident-response.md`, `security-scoring.md`
 - Scripts: `scripts/security/generate.py` (scaffolds security-headers middleware for Next.js/Express/FastAPI), `scripts/security/audit.py` (stdlib regex-based static scan for hardcoded secrets, dangerous patterns, missing headers — exits non-zero on Critical/High findings, CI-gateable), `scripts/common/score.py` (shared severity-weighted posture scoring, also reused by the SEO and Ads modules)
 

@@ -20,7 +20,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Database & Auth** | Schema design, RLS/multi-tenancy, auth strategy matrix, migration safety |
 | **DevOps & Deployment** | CI/CD, Vercel/Netlify/Cloudflare/Railway decision matrix, env & secrets |
 | **Testing/QA** | Test strategy by stack, accessibility + Core Web Vitals checklist |
-| **Security/Cybersecurity** | 124 checks: OWASP Top 10, STRIDE threat modeling, secure coding per stack, API/infra security, incident response — plus a stdlib static secret/pattern scanner |
+| **Security/Cybersecurity** | 134 checks: OWASP Top 10, STRIDE threat modeling, secure coding per stack, API/infra/supply-chain security, incident response — plus a stdlib static secret/pattern scanner |
 | **E-commerce & Payments** | Stripe + Shopify integration patterns, signature-verified webhook scaffolds |
 | **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — layout/type/motion techniques for non-templated design |
 | **SEO** | 112 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability, local SEO (GBP/NAP/reviews) |
@@ -30,7 +30,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 | **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~809 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~819 data rows, 34 reference docs, 14 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

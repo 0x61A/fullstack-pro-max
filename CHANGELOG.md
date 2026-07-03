@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.7.0] — 2026-07-03
+
+### Added
+- **Supply-chain security checks** (`data/security/supply-chain-checks.csv`, `SEC125-SEC134`, 10 checks): automated dependency scanning, enforced lockfiles, pre-merge dependency review, exact-version pinning for security-sensitive packages, CI/CD secret scoping, pinned GitHub Actions (commit SHA not tag), verified build provenance, SBOM generation, and a patch-SLA requirement. Security module total: 124 → 134 checks. New section in `references/infra-cloud-security.md`.
+
 ## [0.6.0] — 2026-07-03
 
 ### Added
@@ -48,6 +53,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.7.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.7.0
 [0.6.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.6.0
 [0.5.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.5.0
 [0.4.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.4.0

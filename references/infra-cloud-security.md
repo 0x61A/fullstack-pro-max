@@ -1,8 +1,12 @@
-> Last updated: 2026-07-03 · Module version: 0.1
+> Last updated: 2026-07-03 · Module version: 0.2
 
 # Infrastructure & Cloud Security
 
 Pairs with `data/security/infra-cloud-security-checks.csv` (17 checks) — query via `scripts/common/search.py`. Covers the platform/infrastructure layer beneath the application code covered by `secure-coding-standards.md` and `api-security.md`.
+
+## Supply Chain — a 10-check addition (`data/security/supply-chain-checks.csv`, SEC125-SEC134)
+
+Known-vulnerable dependencies are the most common real-world breach vector, and it's nearly free to automate a defense: **automated scanning on every PR** (`SEC125`), **enforced lockfiles** (`npm ci`, not `npm install`, `SEC126`), and a lightweight review pass before adding any new package — most supply-chain compromises land through a small unreviewed dependency, not a headline framework (`SEC127`). Pin security-sensitive packages (auth, crypto, payments) to exact versions, not caret ranges (`SEC128` — several real npm attacks propagated through auto-accepted patch updates). In CI/CD: scope secrets per job (`SEC130`, Critical), pin third-party GitHub Actions to a commit SHA not a floating tag (`SEC131`), and verify deployed artifacts trace back to a reviewed commit (`SEC132`). Generate an SBOM per release so a disclosed CVE can be answered in minutes, not hours (`SEC133`), and set an actual SLA for patching disclosed vulnerabilities — scanning without a response SLA just produces an ignored backlog (`SEC134`). Cross-references `AI042`'s SDK-pinning guidance in the AI Integration module.
 
 ## Access Management — the Highest-Leverage Category
 

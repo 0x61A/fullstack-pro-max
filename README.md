@@ -95,6 +95,8 @@ python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # st
 - **CI eats its own dog food.** Every push validates all data rows against the shared schema, smoke-tests every script, checks that internal file references resolve, and scans the repo with the skill's own `scripts/security/audit.py`.
 - **Guidance, not a guarantee.** The security, payments, SEO, and ads material is a strong starting point — validate it against your own project's context, compliance requirements, and current platform docs before relying on it in production.
 
+See [`docs/how-it-was-built.md`](docs/how-it-was-built.md) for the architectural decisions behind this skill.
+
 ## License
 
 [MIT](LICENSE) © 2026 Ahmet Şerif Kart

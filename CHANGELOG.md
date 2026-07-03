@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.9.1] — 2026-07-03
+
+### Added
+- `docs/how-it-was-built.md` — an English write-up of the skill's architectural decisions (single-package action-routing, stdlib-only scripts, CI dogfooding, incremental versioned growth), linked from the README.
+
 ## [0.9.0] — 2026-07-03
 
 ### Added
@@ -63,6 +68,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.9.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.1
 [0.9.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.9.0
 [0.8.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.8.0
 [0.7.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.7.0

@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.8.0] — 2026-07-03
+
+### Added
+- **Creative & budget checks** (`data/ads/creative-budget-checks.csv`, `ADS065-ADS074`, 10 checks): creative concept diversity for entity-level retrieval, fatigue monitoring (frequency + CTR decay), refresh cadence per spend tier, vertical/native-format coverage, UGC-style creative mix, the 70/20/10 budget split, the 3x Kill Rule, ~20% scaling increments, and regulated-category compliance review. Ads module total: 64 → 74 checks. New section in `references/ads-scoring-system.md`.
+
 ## [0.7.0] — 2026-07-03
 
 ### Added
@@ -53,6 +58,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.8.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.8.0
 [0.7.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.7.0
 [0.6.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.6.0
 [0.5.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.5.0

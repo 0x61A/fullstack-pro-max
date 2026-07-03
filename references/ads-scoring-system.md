@@ -1,8 +1,12 @@
-> Last updated: 2026-07-03 · Module version: 0.1
+> Last updated: 2026-07-03 · Module version: 0.2
 
 # Ads Scoring & Cross-Platform Tracking/Attribution
 
-Reuses the exact severity-weighted formula from `security-scoring.md`/`seo-scoring-system.md` and `scripts/common/score.py`, applied across this module's 64 checks: `data/ads/google-ads-checks.csv` (20), `meta-ads-checks.csv` (14), `platform-checks.csv` (16), and `data/ads/tracking-attribution-checks.csv` (14) — the cross-platform tracking/attribution checklist this file also covers in depth, since it doesn't have its own dedicated `ads-*.md` file.
+Reuses the exact severity-weighted formula from `security-scoring.md`/`seo-scoring-system.md` and `scripts/common/score.py`, applied across this module's 74 checks: `data/ads/google-ads-checks.csv` (20), `meta-ads-checks.csv` (14), `platform-checks.csv` (16), `tracking-attribution-checks.csv` (14), and `creative-budget-checks.csv` (10) — the cross-platform tracking/attribution checklist this file also covers in depth, since it doesn't have its own dedicated `ads-*.md` file.
+
+## Creative & Budget — a 10-check addition (`data/ads/creative-budget-checks.csv`, ADS065-ADS074)
+
+Creative diversity now feeds algorithmic delivery directly: platforms with entity-level retrieval (Meta Andromeda, TikTok) reach less of the addressable audience when only 1-2 real concepts run per ad set, not just color/copy variants of one idea (`ADS065`). Track fatigue as a leading signal — rising frequency plus declining CTR/CVR — rather than waiting for ROAS to visibly drop (`ADS066`), and define a refresh cadence per spend tier so high-spend campaigns get proactive attention (`ADS067`). Cover vertical/native-aspect formats for any Stories/Reels/For-You placement (`ADS068`) and mix in platform-native-styled creative alongside polished brand assets (`ADS069`). Budget discipline: the **70/20/10 split** (proven/promising/test, `ADS070`), the **3x Kill Rule** for zero-conversion overspend (`ADS071`), and capping scale-ups at ~20% per adjustment to avoid resetting the learning phase (`ADS072`). Regulated categories (health/finance/housing/employment) need a policy review before launch, not after a rejection (`ADS073`), with disclosures matched per platform and region (`ADS074`).
 
 ## The Formula
 

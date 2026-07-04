@@ -2,6 +2,14 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.21.0] — 2026-07-04
+
+### Added
+- **`frontend-distinctiveness.md` — "Distinctive Is Not the Same Bar as Good"**: a new section capturing this skill's most-repeated build-history failure — chasing *un-templated* and treating it as if it also delivered *sophisticated*. They're independent bars; the usual way to escape the generic AI skeleton (flat blocks, colored rectangles, vast empty space) clears the first and lands somewhere cheap/unfinished. Adds a two-bar pre-ship check: run the `UX050` five-competitors test for distinctiveness *and* a separate honest "does this look studio-made or like a scared first draft; is there real depth or just flat shapes and gaps" check for sophistication. Clarifies deliberate restraint ≠ flatness.
+
+### Changed
+- **Sayfa Kitabevi rebuilt** (the "Real builds" bookstore): the first cut leaned on flat colored rectangles for book covers and skipped real imagery on a misguided "keep it honest" rationale — it read like a bar chart, nowhere near the atmospheric reference sites, and the user flagged the layout itself as too simple. Rebuilt richer: full-bleed atmospheric hero on real warm-shelf photography, layered story band (real photo + inset + rotated wax-seal badge + stats), book objects with real spine/cloth/emboss detail, full-bleed photographic pull-quote, staff picks with real photos + rotated handwritten-note post-its, editorial event list, deep forest-green newsletter band. Real Unsplash photography as clearly-labelled placeholder (not a real identifiable bookstore's photo passed off as this fictional shop's own).
+
 ## [0.20.0] — 2026-07-04
 
 ### Added
@@ -165,6 +173,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.21.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.21.0
 [0.20.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.20.0
 [0.19.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.19.0
 [0.18.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.18.0

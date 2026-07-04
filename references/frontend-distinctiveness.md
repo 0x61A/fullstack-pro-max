@@ -1,4 +1,4 @@
-> Last updated: 2026-07-04 · Module version: 0.3
+> Last updated: 2026-07-04 · Module version: 0.4
 
 # Frontend Distinctiveness — the Anti-Generic-Design Playbook
 
@@ -50,9 +50,17 @@ Don't sample one technique from every category below. Pick 2-3 that fit the bran
 
 Before shipping a brand-critical page, do this concretely, not just as a mental gut-check: **screenshot it next to 2-3 direct competitors and look at them side by side** (`UX067`, `UX050`). If the page is visually indistinguishable in that lineup — same layout shape, same color temperature, same type feel — revisit at least one major decision before calling it done. This is more reliable than judging distinctiveness from inside the process of having built the page incrementally, where every individual choice already feels considered.
 
+## Distinctive Is Not the Same Bar as Good
+
+The single most-repeated failure in this skill's own build history: chasing *distinctive* (doesn't look like the generic AI template) and treating that as if it also delivered *sophisticated* (actually looks good). It doesn't. They are two independent bars, and clearing the first does nothing for the second. Worse, the most common way to escape the generic skeleton — strip everything back to flat blocks, colored rectangles, huge empty space, minimal-everything — clears the "not templated" bar while landing somewhere that reads cheap, sparse, and unfinished. A field-tested example: a bookstore page built from flat colored rectangles standing in for book covers was technically un-templated and technically honest, but read like a bar chart next to the warm, layered, photographic real sites it was meant to rival. The fix wasn't more distinctiveness — it was *craft and richness*: real atmospheric imagery, layered depth (overlapping elements, insets, badges), textured/embossed detail instead of flat fills, considered density instead of vast emptiness.
+
+Concretely, before calling a brand-forward page done, check both bars separately:
+- **Distinctive?** Run the `UX050`/`UX067` five-competitors screenshot test.
+- **Sophisticated?** Ask honestly: does this look like a studio made it, or like a first draft that's afraid to commit? Is there real depth (imagery, layering, texture, shadow, considered type scale) or just flat shapes and gaps? Would a paying client see richness or see "unfinished"? Minimal and flat are not the same thing — restraint is deliberate and rich; flatness is just absence.
+
 ## What This Is Not
 
-This is not a mandate to make everything maximalist, loud, or experimental — several of the palette options in `colors.csv` (muted sage & clay, single-hue ramps, quiet neutral-led systems) are explicitly restrained, and restraint applied deliberately is just as valid a distinctiveness strategy as boldness. The throughline across every technique here is *deliberateness*: a choice that was actually made, evaluated against the category default, and applied consistently — not any specific aesthetic direction.
+This is not a mandate to make everything maximalist, loud, or experimental — several of the palette options in `colors.csv` (muted sage & clay, single-hue ramps, quiet neutral-led systems) are explicitly restrained, and restraint applied deliberately is just as valid a distinctiveness strategy as boldness. The throughline across every technique here is *deliberateness*: a choice that was actually made, evaluated against the category default, and applied consistently — not any specific aesthetic direction. But deliberate restraint (a considered, rich, quiet system) is not the same as flatness (empty blocks and gaps because committing to detail felt risky) — see the section directly above.
 
 ## Interaction With Other Modules
 

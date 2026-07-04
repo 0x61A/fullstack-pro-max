@@ -2,6 +2,15 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.17.0] — 2026-07-04
+
+### Added
+- **Three more real builds** in the "Real builds" section, chosen to be structurally and visually distinct from each other and from the existing two (salon, cafe) — same skill, deliberately different results, not the same template recolored:
+  - **Erdem & Kaya Hukuk Bürosu** (legal, `UX070` + `UX127` Swiss/International) — light mode, strict hairline grid, single grotesk, zero shadows/radius.
+  - **Fluxlane** (SaaS/dev-tool, fictional, `UX071` + `UX138` bento grid) — deliberately avoids `UX141` dark-technical (already used in the dashboard field test) to prove the same sector can look genuinely different.
+  - **Kinetik Performans Stüdyosu** (fitness/wellness, `UX074` + `UX102` condensed display) — dark mode, multi-color gradient mesh, diagonal energy.
+  - All screenshotted with headless Chrome the same way as the first two.
+
 ## [0.16.1] — 2026-07-04
 
 ### Added
@@ -132,6 +141,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.17.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.17.0
 [0.16.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.1
 [0.16.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.0
 [0.15.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.15.0

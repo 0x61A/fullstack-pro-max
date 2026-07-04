@@ -105,6 +105,20 @@ The `examples/` scaffolds above are deliberately unfinished — TODO-marked stru
 
 ![Meridyen Kahve cafe site](assets/screenshot-cafe-build.png)
 
+**Erdem & Kaya Hukuk Bürosu** (legal). `UX070` sector direction (deep ink, serif authority) blended with the `UX127` Swiss/International style (strict grid, one grotesk, zero ornament) — light mode, hairline-only structure, no shadows or radius anywhere. About as far from the salon's soft/rounded warmth as this skill's vocabulary goes.
+
+![Erdem & Kaya law firm site](assets/screenshot-law-build.png)
+
+**Fluxlane** (SaaS/dev-tool, fictional). `UX071` product-led sector direction with the `UX138` bento-grid style — deliberately *not* `UX141` dark-technical (already used in the dashboard field test above, and the single most saturated look in SaaS right now) to prove the same sector can produce a genuinely different result.
+
+![Fluxlane SaaS landing page](assets/screenshot-saas-build.png)
+
+**Kinetik Performans Stüdyosu** (fitness/wellness). `UX074` sector direction (high-energy gradient, diagonal dynamism) with `UX102` condensed display type — dark mode, multi-color gradient mesh, the most visually loud of the five.
+
+![Kinetik fitness studio site](assets/screenshot-fitness-build.png)
+
+Five sectors, five style-vocabulary combinations, zero shared layout structure, palette, or type pairing — the point being demonstrated, not just claimed.
+
 ## Scripts
 
 Every script supports `--help`.

@@ -105,6 +105,20 @@ Yukarıdaki `examples/` iskeletleri kasıtlı olarak yarım — TODO işaretli y
 
 ![Meridyen Kahve kafe sitesi](assets/screenshot-cafe-build.png)
 
+**Erdem & Kaya Hukuk Bürosu** (hukuk). `UX070` sektör yönü (deep ink, serif otorite) + `UX127` Swiss/International stili (strict grid, tek grotesk, sıfır süsleme) — açık mod, sadece hairline yapı, hiçbir yerde gölge/radius yok. Kuaförün yumuşak/rounded sıcaklığından skill'in sözlüğünde gidebileceği en uzak nokta.
+
+![Erdem & Kaya hukuk sitesi](assets/screenshot-law-build.png)
+
+**Fluxlane** (SaaS/dev-tool, kurgusal). `UX071` ürün-öncelikli sektör yönü + `UX138` bento-grid stili — bilinçli olarak `UX141` dark-technical *değil* (yukarıdaki dashboard saha testinde zaten kullanıldı, ve şu an SaaS'ta en doymuş görünüm) — aynı sektörün gerçekten farklı bir sonuç üretebildiğini kanıtlamak için.
+
+![Fluxlane SaaS sitesi](assets/screenshot-saas-build.png)
+
+**Kinetik Performans Stüdyosu** (fitness/wellness). `UX074` sektör yönü (yüksek enerji gradient, diagonal dinamizm) + `UX102` condensed display tip — koyu mod, çok renkli gradient mesh, beşin içinde görsel olarak en yüksek sesli olan.
+
+![Kinetik fitness stüdyosu sitesi](assets/screenshot-fitness-build.png)
+
+Beş sektör, beş stil-sözlüğü kombinasyonu, sıfır paylaşılan yerleşim yapısı/palet/tip eşleşmesi — iddia değil, gösterilen nokta bu.
+
 ## Script'ler
 
 Her script `--help` destekler.

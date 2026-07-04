@@ -133,6 +133,14 @@ The first fix over-corrected: three builds (an architecture studio, a boutique h
 
 Two more attempts at this — a claymorphism kids' app and a glassmorphism fintech wallet — didn't clear this skill's own quality bar on user review and were pulled rather than kept as bad examples. A themed *material* (glass, clay, or otherwise) still has to be executed with real craft, not just picked for novelty; the working versions of those, if any, will land here once they do.
 
+### Attempt three — pick a topic, research real sites first, then design
+
+**Sayfa Kitabevi** (independent bookstore, Cihangir/İstanbul — a sector with no canned recipe in `sector-art-direction.csv`, and correctly *not* forced into one). This time the process ran in the order this skill actually documents: chose the topic, `WebFetch` + headless-Chrome-screenshotted two real independent bookstores ([Daunt Books](https://dauntbooks.co.uk), [Books Are Magic](https://booksaremagic.net)) to extract *principles* rather than guess from memory, invoked the skill's `design` action, then wrote the page. `UX130` (Editorial/magazine) + `UX021` (Distinctive Serif Display + Neutral Sans), derived from scratch via `art-direction-derivation.md` since no sector row fit.
+
+The photography question came up again — and this time got a third answer, not just "real photo" vs. "fake gradient." Using a real famous bookstore's actual photo (there were tempting candidates) would have been dishonest in the other direction: passing a real, identifiable place off as this fictional shop's own interior. The fix: an **illustrated** bookshelf — hand-tuned CSS book spines with real titles, varied widths/heights/colors — honestly presented as illustration, not disguised as either a fake photo or someone else's real one.
+
+![Sayfa Kitabevi bookstore site](assets/screenshot-bookstore-build.png)
+
 ## Scripts
 
 Every script supports `--help`.

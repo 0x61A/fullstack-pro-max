@@ -2,6 +2,12 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.20.0] — 2026-07-04
+
+### Added
+- **Sayfa Kitabevi** (independent bookstore, `v0.20.0`'s "Real builds" section): the process ran in the order this skill documents for once — topic chosen first, two real competitor sites (Daunt Books, Books Are Magic) actually `WebFetch`ed and headless-Chrome-screenshotted for research before any design decision, principles extracted rather than guessed, the skill's `design` action invoked, no sector-art-direction row forced to fit (there isn't one for bookstores, and that's stated rather than papered over). Style derived from scratch: `UX130` (Editorial/magazine) + `UX021` (Distinctive Serif Display + Neutral Sans).
+- **A third answer to the photography question**, on top of "real photo" (`v0.19.0`, real estate) vs. "faked gradient" (`v0.18.0`, rejected): using a real, identifiable bookstore's actual photo for a fictional shop would misrepresent a real place as this business's own space. Resolved with an honestly-presented **illustrated** bookshelf (hand-tuned CSS book spines, real titles, varied dimensions) instead of a photo of any kind — distinctive, on-theme, and doesn't borrow credibility from somewhere real.
+
 ## [0.19.0] — 2026-07-04
 
 ### Removed
@@ -159,6 +165,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.20.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.20.0
 [0.19.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.19.0
 [0.18.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.18.0
 [0.17.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.17.0

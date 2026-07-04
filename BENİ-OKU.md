@@ -133,6 +133,14 @@ Dört sektör, dört palet, dört tip eşleşmesi — ama gözden geçirince dö
 
 Bunun için iki deneme daha — claymorphism bir çocuk uygulaması ve glassmorphism bir fintech cüzdanı — kullanıcı incelemesinde skill'in kendi kalite çıtasını geçemedi ve kötü örnek olarak tutulmak yerine kaldırıldı. Temalı bir *malzeme* (cam, kil, ya da başka) hâlâ gerçek zanaatla uygulanmalı, sadece yenilik olsun diye seçilmemeli; bunların çalışan versiyonları, varsa, buraya sonra eklenecek.
 
+### Üçüncü deneme — önce konu seç, önce gerçek siteleri araştır, sonra tasarla
+
+**Sayfa Kitabevi** (bağımsız kitapçı, Cihangir/İstanbul — `sector-art-direction.csv`'de hazır tarifi olmayan bir sektör, ve bilinçli olarak zorlanmadı). Bu sefer süreç skill'in kendi belgelediği sırayla işledi: konu seçildi, iki gerçek bağımsız kitapçı ([Daunt Books](https://dauntbooks.co.uk), [Books Are Magic](https://booksaremagic.net)) `WebFetch` + headless-Chrome screenshot ile incelendi — hafızadan tahmin değil, prensip çıkarımı. Ardından skill'in `design` action'ı çağrıldı, sonra sayfa yazıldı. `UX130` (Editorial/magazine) + `UX021` (Distinctive Serif Display + Neutral Sans), hiçbir sektör satırı uymadığı için `art-direction-derivation.md` ile sıfırdan türetildi.
+
+Fotoğraf sorunu yine çıktı — ve bu sefer üçüncü bir cevap buldu, sadece "gerçek fotoğraf" vs "sahte gradient" değil. Gerçek ünlü bir kitapçının fotoğrafını kullanmak (cazip adaylar vardı) başka yönde dürüst olmazdı — gerçek, tanınabilir bir yeri bu kurgusal dükkanın kendi mekanıymış gibi geçirmek. Çözüm: **illüstre edilmiş** bir kitaplık — gerçek başlıklarla, değişken genişlik/yükseklik/renkte, elle ayarlanmış CSS kitap sırtları — dürüstçe illüstrasyon olarak sunulmuş, ne sahte fotoğraf ne de başkasının gerçek fotoğrafı gibi gizlenmemiş.
+
+![Sayfa Kitabevi kitapçı sitesi](assets/screenshot-bookstore-build.png)
+
 ## Script'ler
 
 Her script `--help` destekler.

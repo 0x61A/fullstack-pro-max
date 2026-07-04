@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-zero-blue.svg)](#requirements)
 
-*Türkçe sürüm: [README.tr.md](README.tr.md)*
+*Türkçe sürüm: [README.tr.md](BENİ-OKU.md)*
 
 **One [Claude Code](https://claude.com/claude-code) skill that ships a real web product end to end** — distinctive UI/UX, backend architecture, database & auth, deployment, testing, cybersecurity, SEO, ads, e-commerce payments, AI features, analytics, email, and i18n — with adaptive stack selection instead of one fixed frontend+backend combo. Built for two use cases: agency/client delivery and personal SaaS builds.
 

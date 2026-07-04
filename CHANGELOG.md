@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.14.1] — 2026-07-04
+
+### Changed
+- **README.md / README.tr.md restructure**: added a quick-start section up top, split the module table into "Ship the product" / "Grow the product" groups for scannability, grouped the scripts block by purpose, and added a social-preview image + a "Known Limitations" section (untested-in-the-field status, the two knowledge-authored UI/UX CSVs' no-live-fetch caveat, guidance-not-guarantee). No data or behavior changes.
+
 ## [0.14.0] — 2026-07-04
 
 ### Added
@@ -105,6 +110,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.14.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.1
 [0.14.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.0
 [0.13.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.13.0
 [0.12.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.12.0

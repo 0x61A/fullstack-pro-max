@@ -2,6 +2,13 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.12.0] — 2026-07-04
+
+### Added
+- **Style vocabulary** (`data/ui-ux/style-vocabulary.csv`, `UX125-UX154`, 30 rows): named aesthetic movements as a decision matrix — brutalism, neo-brutalism, swiss/international, bauhaus, art-deco, editorial, kinetic typography, collage/zine, glassmorphism, claymorphism, neumorphism, material-depth, skeuomorphic accents, bento grid, data-dense dashboard, industrial/utility, dark-technical, terminal/mono, luxury-minimal, e-ink/paper, flat 2.0, corporate-clean, playful-rounded, memphis, y2k, vaporwave, retro-futurism, organic/hand-crafted, maximalism, gradient-mesh/aurora. Each row: definition + typical palette/type/layout combination, best-for/avoid-when/tradeoffs, and machine-readable token tendencies in tags (`radius-*`, `shadow-*`, `border-*`, `density-*`).
+- **`references/art-direction-derivation.md`**: deriving a visual identity from a verbal brief when there's no reference site — five brand-personality axes (serious↔playful, warm↔technical, luxury↔accessible, calm↔energetic, classic↔experimental), each end mapped to concrete palette/type/layout/motion/style-candidate pulls; a 7-step process anchored to sector recipes and the style vocabulary; a Design DNA output template with a built-in UX050 genericness check and user confirmation gate. UI/UX module total: 124 → 154 rows.
+- **`generate.py --style UXnnn`**: applies a style row's token tendencies to the generated output — `--radius-*`, `--shadow-raised/lifted`, `--border-width`, `--space-unit` CSS variables plus matching Tailwind `borderRadius`/`boxShadow` extensions. Tag parsing warns on unknown or conflicting token tags instead of guessing. One command now yields a full token set: `--palette` + `--type` + `--style`.
+
 ## [0.11.0] — 2026-07-04
 
 ### Added
@@ -86,6 +93,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.12.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.12.0
 [0.11.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.11.0
 [0.10.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.1
 [0.10.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.0

@@ -22,7 +22,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Testing/QA** | Test strategy by stack, accessibility + Core Web Vitals checklist |
 | **Security/Cybersecurity** | 134 checks: OWASP Top 10, STRIDE threat modeling, secure coding per stack, API/infra/supply-chain security, incident response — plus a stdlib static secret/pattern scanner |
 | **E-commerce & Payments** | Stripe + Shopify integration patterns, signature-verified webhook scaffolds |
-| **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — layout/type/motion techniques for non-templated design; turns user-supplied example site URLs into a Reference Design Brief before coding |
+| **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — 30-style aesthetic vocabulary (brutalism → gradient-mesh), brand-personality-axes → Design DNA derivation, layout/type/motion techniques; turns example site URLs into a Reference Design Brief before coding |
 | **SEO** | 112 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability, local SEO (GBP/NAP/reviews) |
 | **Ads** | 74 checks: Google/Meta/LinkedIn/TikTok/Microsoft + cross-platform tracking/attribution + creative/budget discipline |
 | **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
@@ -30,7 +30,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 | **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~886 data rows, 35 reference docs, 16 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~916 data rows, 36 reference docs, 16 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 

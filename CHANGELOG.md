@@ -2,6 +2,12 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.14.0] — 2026-07-04
+
+### Added
+- **Component-library index** (`data/ui-ux/component-libraries.csv`, `UX245-UX268`, 24 rows): catalogs 18 real component/theme marketplaces (21st.dev, shadcn/ui, shadcn/ui Blocks, Shadcnblocks.com, Aceternity UI, Magic UI, Motion Primitives, Hyperui, Origin UI, Preline UI, Meraki UI, Mamba UI, daisyUI, Flowbite, HeroUI/NextUI, Cult UI, Tremor, v0.dev) plus 6 needs-based "Selection Guide" rows (fastest-to-ship, animation-heavy marketing, zero-budget, data-dense dashboard, non-React framework, AI-prompt-to-code). Unlike the known-sites library, this file is a **live-fetch index, not a static answer** — entries point at where to go look, not what to paste from memory; always `WebFetch` the actual component page for current code/API/pricing before writing anything into a project. UI/UX module total: 244 → 268 rows.
+- **`references/component-library-integration.md`**: workflow for when the user wants a ready-made component/theme instead of a from-scratch build. Covers querying the catalog by tag/category, surfacing 2-3 candidates with cost/tradeoff before picking one, live-fetching current code, and integration steps by ecosystem (shadcn/ui-family CLI/copy-paste, markup-only Tailwind kits, installed npm packages, AI generators) — plus a reconciliation checklist (design-token remap, accessibility check, security audit for new third-party JS, license verification, re-skin before shipping brand-forward work). Explicitly scoped apart from `reference-site-analysis.md`/`known-sites-library.csv`, which are for visual inspiration only and never produce copied code.
+
 ## [0.13.0] — 2026-07-04
 
 ### Added
@@ -99,6 +105,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.14.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.0
 [0.13.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.13.0
 [0.12.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.12.0
 [0.11.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.11.0

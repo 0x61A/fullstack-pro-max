@@ -22,7 +22,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **Test/QA** | Stack'e göre test stratejisi, erişilebilirlik + Core Web Vitals kontrol listesi |
 | **Güvenlik/Siber Güvenlik** | 134 kontrol: OWASP Top 10, STRIDE tehdit modelleme, stack'e göre güvenli kodlama, API/altyapı/tedarik zinciri güvenliği, olay müdahalesi — artı stdlib statik secret/desen tarayıcısı |
 | **E-ticaret & Ödemeler** | Stripe + Shopify entegrasyon desenleri, imza doğrulamalı webhook iskeleti |
-| **UI/UX & Özgün Frontend** | "Jenerik AI tasarımı" karşıtı el kitabı — 30 stillik estetik sözlük (brutalism → gradient-mesh), marka kişilik eksenlerinden Design DNA türetme, yerleşim/tipografi/hareket teknikleri; örnek site linklerini kod öncesi Referans Tasarım Brief'ine dönüştürür; kullanıcının linki yoksa her stile 2 gerçek isimli site + tükenmez galeri-arama kaynağı eşleyen 90 satırlık bilinen-siteler kütüphanesi |
+| **UI/UX & Özgün Frontend** | "Jenerik AI tasarımı" karşıtı el kitabı — 30 stillik estetik sözlük (brutalism → gradient-mesh), marka kişilik eksenlerinden Design DNA türetme, yerleşim/tipografi/hareket teknikleri; örnek site linklerini kod öncesi Referans Tasarım Brief'ine dönüştürür; kullanıcının linki yoksa her stile 2 gerçek isimli site + tükenmez galeri-arama kaynağı eşleyen 90 satırlık bilinen-siteler kütüphanesi; kullanıcı sıfırdan yerine hazır component/tema isterse 21st.dev, shadcn/ui, Aceternity UI, Magic UI, Tremor gibi 18 gerçek kaynağı canlı çekerek listeleyen 24 satırlık component-library indeksi + ekosisteme göre copy-paste/CLI/npm entegrasyon rehberi |
 | **SEO** | 112 kontrol: teknik, on-page, içerik/E-E-A-T, schema seçimi, GEO/AI atıf edilebilirliği, yerel SEO (GBP/NAP/yorumlar) |
 | **Reklam** | 74 kontrol: Google/Meta/LinkedIn/TikTok/Microsoft + platformlar arası izleme/atıf + kreatif/bütçe disiplini |
 | **AI Entegrasyonu** | Claude API: model seçimi & yönlendirme, streaming endpoint'ler, tool use, RAG, prompt cache/maliyet kontrolü, eval disiplini, 16 LLM güvenlik kontrolü (OWASP LLM Top 10) |
@@ -30,7 +30,7 @@ On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yükl
 | **E-posta** | Resend/Postmark/SES seçimi, kuyruklu idempotent gönderim, 14 deliverability kontrolü (SPF/DKIM/DMARC, toplu gönderici kuralları, warmup) |
 | **i18n / Yerelleştirme** | next-intl/react-i18next seçimi, URL stratejisi, hreflang, RTL, ICU çoğullama, 12 l10n kontrolü |
 
-~1006 veri satırı, 36 referans dokümanı, 16 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
+~1030 veri satırı, 37 referans dokümanı, 16 script. **Sıfır paketlenmiş bağımlılık** — venv yok, `requirements.txt` yok.
 
 ## Kurulum
 
@@ -62,6 +62,7 @@ python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # st
 python3 scripts/ui-ux/scan.py https://a.com https://b.com --brief           # örnek sitelerden Referans Tasarım Brief taslağı
 python3 scripts/ui-ux/generate.py --palette UX088 --components hero,nav      # design token + bileşen iskeletleri
 python3 scripts/common/search.py data/ui-ux/known-sites-library.csv --tag style:UX141   # "dark-technical" için gerçek siteler
+python3 scripts/common/search.py data/ui-ux/component-libraries.csv --category "Selection Guide"  # hazır component kaynakları
 ```
 
 ## Notlar

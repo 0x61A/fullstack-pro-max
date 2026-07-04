@@ -15,7 +15,7 @@
 
 ## İçindekiler
 
-[İçinde ne var](#i̇çinde-ne-var) · [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanımda](#kullanımda-nasıl-görünüyor) · [Script'ler](#scriptler) · [Bilinen sınırlar](#bilinen-sınırlar)
+[İçinde ne var](#i̇çinde-ne-var) · [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanımda](#kullanımda-nasıl-görünüyor) · [Saha testleri](#saha-testleri) · [Script'ler](#scriptler) · [Bilinen sınırlar](#bilinen-sınırlar)
 
 ## Hızlı başlangıç
 
@@ -82,6 +82,17 @@ const securityHeaders = [
 ];
 ```
 
+## Saha testleri
+
+İki gerçek prompt, gerçek script'lerle uçtan uca çalıştırıldı (dry-run değil, transkript değil) — çıktı [`examples/`](examples) altında commit'li:
+
+| Senaryo | Prompt | Bulunan & düzeltilen |
+|---|---|---|
+| [`salon-site/`](examples/salon-site) | "Sıfırdan işletmeme bir site yap" (yerel kuaför, tercih belirtilmemiş) | `data/backend/stacks.csv`'de "backend gerekmiyor" satırı yoktu — bir broşür-site brief'i için en yaygın gerçek cevap bu. `BE088` + Stack Decision Tree'ye yeni soru-0 eklendi. |
+| [`dark-technical-dashboard/`](examples/dark-technical-dashboard) | "Karanlık, teknik dashboard — sıfırdan değil hazır component kullan" | Bir palet satırının hex-çıkarma sezgiseli accent rengini sessizce düşürüyordu; `scripts/backend/generate.py` zaten çoğul verilen kaynak adlarını çift çoğulluyordu (`projects` → `projectses`). İkisi de düzeltildi. İki component-library kaynağı canlı çekilip `component-libraries.csv` iddialarıyla karşılaştırıldı — ikisi de hâlâ doğru, bir detay güncellendi. |
+
+Her klasörün kendi `.md` yazısı çalıştırılan komutları ve hangi referans dosyası/CSV satırına denk geldiğini gösteriyor — routing mantığı sadece okunarak değil, skill'in güncel sürümüne karşı yeniden çalıştırılarak da kontrol edilebilir.
+
 ## Script'ler
 
 Her script `--help` destekler.
@@ -106,7 +117,7 @@ python3 scripts/common/search.py data/ui-ux/component-libraries.csv --category "
 
 ## Bilinen sınırlar
 
-- **Henüz sahada test edilmedi.** Bu skill kendi kendini doğruluyor (şema kontrolleri, script smoke-test'leri, statik güvenlik self-scan'i) ama yazarı dışında kimse tarafından gerçek bir müşteri projesinde uçtan uca çalıştırılmadı. Routing mantığını, dağınık gerçek promptlarla henüz sınanmamış "teoride sağlam" olarak değerlendirin.
+- **İki kez sahada test edildi, henüz ölçekte değil.** [İki gerçek prompt](#saha-testleri) gerçek script'lerle uçtan uca çalıştırıldı, ikisi de gerçek bug çıkardı ve düzeltildi — ama bu, çok geniş bir olasılık uzayından iki senaryo, ve ikisini de skill'in yazarı çalıştırdı, bağımsız bir kullanıcı değil. Routing mantığını "giderek daha çok kontrol edilmiş" olarak değerlendirin, "tamamen kanıtlanmış" değil — daha fazla/dağınık gerçek promptla sınanana kadar.
 - **İki UI/UX arama CSV'si, model bilgisinden yazıldı, canlı çekilmedi.** `known-sites-library.csv` (görsel ilham) ve `component-libraries.csv` (gerçek kod kaynağı) token tasarrufu için mevcut bilgiden yazıldı, yazıldığı anda canlı web'e karşı doğrulanmadı. İkisi de kendi `last_verified` notunda bunu belirtiyor — bir siteyi/component'i güncel gerçek olarak aktarmadan önce her zaman doğrulayın.
 - **Rehberlik, garanti değil.** Güvenlik, ödeme, SEO ve reklam içeriği güçlü bir başlangıç noktasıdır — üretimde kullanmadan önce kendi projenizin bağlamına, uyumluluk gereksinimlerine ve güncel platform dokümanlarına göre doğrulayın.
 

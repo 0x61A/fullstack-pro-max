@@ -2,6 +2,16 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.16.0] — 2026-07-04
+
+### Added
+- **`examples/` directory**: real, committed output from actually running the skill's own scripts end to end (not dry-runs) against two field-test prompts. `examples/salon-site/` (a from-scratch small-business site: `plan` → `design`, `PLAN.md` walks through the backend-decision and sector-direction steps) and `examples/dark-technical-dashboard/` (a ready-made-component ask: `design`'s known-sites-library → component-libraries chain → `build`, `COMPONENT-SOURCING.md` walks through it including two live `WebFetch` spot-checks against the component-library sources). `examples/README.md` indexes both. README.md/README.tr.md gained a "Field tests" section summarizing both.
+
+### Fixed
+- **`scripts/backend/generate.py` — double-pluralization bug**, caught by the dashboard field test: `naive_plural()` unconditionally appended `s`/`es` to the resource name's last word, so an already-plural input like `projects` or `posts` became `projectses`/`postses`. A word already ending in `s` is now left as-is.
+- **`data/ui-ux/colors.csv` `UX088`** (the dark-mode palette used in `generate.py`'s own `--help` example): the row's prose only gave 2 of 4 color roles as literal hex codes, so the script's hex-extraction heuristic silently dropped the accent color to a duplicate of the text color. Added a concrete accent hex (`#5E6AD2`) to the row.
+- **`data/ui-ux/component-libraries.csv` `UX262`** (Tremor): live-fetch spot-check found Tremor now also sells a separate premium block library (300+ templates) on top of its free core component set — row updated to reflect both tiers.
+
 ## [0.15.0] — 2026-07-04
 
 ### Added
@@ -117,6 +127,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.16.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.0
 [0.15.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.15.0
 [0.14.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.1
 [0.14.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.0

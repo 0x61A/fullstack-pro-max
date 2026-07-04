@@ -35,7 +35,9 @@ def split_words(name: str):
 
 
 def naive_plural(word: str) -> str:
-    if word.endswith(("s", "x", "ch", "sh")):
+    if word.endswith("s"):
+        return word  # already looks plural (e.g. "projects", "posts") -- don't double-pluralize to "projectses"
+    if word.endswith(("x", "ch", "sh")):
         return word + "es"
     if word.endswith("y") and word[-2:-1] not in "aeiou":
         return word[:-1] + "ies"

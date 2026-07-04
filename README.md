@@ -15,7 +15,7 @@
 
 ## Contents
 
-[What's inside](#whats-inside) · [Quick start](#quick-start) · [In use](#what-it-looks-like-in-use) · [Scripts](#scripts) · [Known limitations](#known-limitations)
+[What's inside](#whats-inside) · [Quick start](#quick-start) · [In use](#what-it-looks-like-in-use) · [Field tests](#field-tests) · [Scripts](#scripts) · [Known limitations](#known-limitations)
 
 ## Quick start
 
@@ -82,6 +82,17 @@ const securityHeaders = [
 ];
 ```
 
+## Field tests
+
+Two real prompts run end to end through the actual scripts (not dry-runs, not transcripts) — output committed under [`examples/`](examples):
+
+| Scenario | Prompt | Found & fixed |
+|---|---|---|
+| [`salon-site/`](examples/salon-site) | "Build a from-scratch website for my business" (a local salon, no stated preferences) | `data/backend/stacks.csv` had no row for "no backend needed" — the most common real answer for a brochure-site brief. Added `BE088` + a new question 0 in the Stack Decision Tree. |
+| [`dark-technical-dashboard/`](examples/dark-technical-dashboard) | "Dark, technical dashboard — use a ready-made component instead of building from scratch" | A palette row's hex-extraction heuristic silently dropped the accent color; `scripts/backend/generate.py` double-pluralized resource names already given in plural form (`projects` → `projectses`). Both fixed. Two component-library sources were also live-fetched and spot-checked against `component-libraries.csv`'s claims — both still accurate, one detail updated. |
+
+Each folder's `.md` write-up shows the exact commands run and which reference files/CSV rows they hit, so the routing logic can be re-checked against the current version of the skill, not just read about.
+
 ## Scripts
 
 Every script supports `--help`.
@@ -106,7 +117,7 @@ python3 scripts/common/search.py data/ui-ux/component-libraries.csv --category "
 
 ## Known limitations
 
-- **Untested in the field.** This skill validates itself (schema checks, script smoke tests, a static security self-scan) but hasn't yet been run end-to-end against a real client build by anyone but its author. Treat the routing logic as sound-in-theory until it's been exercised on messier, real prompts.
+- **Field-tested twice, not yet at scale.** [Two real prompts](#field-tests) have been run end to end through the actual scripts, and both surfaced real bugs that got fixed — but that's two scenarios out of a very large possibility space, and both were run by this skill's author, not an independent user. Treat the routing logic as increasingly-checked, not fully proven, until it's been exercised on more/messier real prompts.
 - **Two UI/UX lookup CSVs, written from model knowledge, not fetched live.** `known-sites-library.csv` (visual inspiration) and `component-libraries.csv` (real code sources) were authored from existing knowledge to save tokens, not verified against the live web at write time. Both say so in their own `last_verified` caveats — always confirm specifics (that a site still looks that way, that a component's API hasn't changed) before quoting them as current fact.
 - **Guidance, not a guarantee.** The security, payments, SEO, and ads material is a strong starting point — validate it against your own project's context, compliance requirements, and current platform docs before relying on it in production.
 

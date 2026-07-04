@@ -22,7 +22,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Testing/QA** | Test strategy by stack, accessibility + Core Web Vitals checklist |
 | **Security/Cybersecurity** | 134 checks: OWASP Top 10, STRIDE threat modeling, secure coding per stack, API/infra/supply-chain security, incident response — plus a stdlib static secret/pattern scanner |
 | **E-commerce & Payments** | Stripe + Shopify integration patterns, signature-verified webhook scaffolds |
-| **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — 30-style aesthetic vocabulary (brutalism → gradient-mesh), brand-personality-axes → Design DNA derivation, layout/type/motion techniques; turns example site URLs into a Reference Design Brief before coding |
+| **UI/UX & Distinctive Frontend** | Anti-generic-AI-design playbook — 30-style aesthetic vocabulary (brutalism → gradient-mesh), brand-personality-axes → Design DNA derivation, layout/type/motion techniques; turns example site URLs into a Reference Design Brief before coding; a 90-entry known-sites library maps real named sites (+ evergreen gallery-search fallbacks) to each style, for when the user names a vibe but has no link |
 | **SEO** | 112 checks: technical, on-page, content/E-E-A-T, schema selection, GEO/AI-citability, local SEO (GBP/NAP/reviews) |
 | **Ads** | 74 checks: Google/Meta/LinkedIn/TikTok/Microsoft + cross-platform tracking/attribution + creative/budget discipline |
 | **AI Integration** | Claude API: model tier selection & routing, streaming endpoints, tool use, RAG, prompt caching/cost control, evals, 16 LLM-security checks (OWASP LLM Top 10) |
@@ -30,7 +30,7 @@ Thirteen modules, each backed by structured data (CSV), on-demand reference docs
 | **Email** | Resend/Postmark/SES selection, queue-backed idempotent sending, 14 deliverability checks (SPF/DKIM/DMARC, bulk-sender rules, warmup) |
 | **i18n / Localization** | next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization, 12 l10n checks |
 
-~916 data rows, 36 reference docs, 16 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
+~1006 data rows, 36 reference docs, 16 scripts. **Zero vendored dependencies** — no bundled venv, no `requirements.txt`.
 
 ## What it looks like in use
 
@@ -89,6 +89,7 @@ python3 scripts/common/validate.py                                          # va
 python3 scripts/ai/generate.py --stack nextjs-api --dry-run                 # streaming Claude chat endpoint
 python3 scripts/ui-ux/scan.py https://a.com https://b.com --brief           # draft a Reference Design Brief from example sites
 python3 scripts/ui-ux/generate.py --palette UX088 --components hero,nav      # design tokens + component skeletons
+python3 scripts/common/search.py data/ui-ux/known-sites-library.csv --tag style:UX141   # real sites for "dark-technical"
 ```
 
 ## Notes

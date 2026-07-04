@@ -1,4 +1,4 @@
-> Last updated: 2026-07-03 · Module version: 0.1
+> Last updated: 2026-07-04 · Module version: 0.2
 
 # Reference Site Analysis
 
@@ -12,6 +12,16 @@ Use this when the user describes a desired theme by pointing at one or more exis
 4. **Reconcile multiple references into one direction.** When the user gives 2-3 example sites, don't average or stitch them — find the *shared thread* (e.g. "all three use high-contrast product photography and minimal chrome") and build the brief around that thread. Note per-site details that are one-offs, not the throughline, and leave those out.
 5. **Extract principles, not pixels.** Never copy a reference site's literal copy, imagery, or exact CSS values into the new build — that's both an IP risk and produces a worse, uncredited clone rather than a genuinely fitting design. Write the brief in terms of *decisions* (palette family, type pairing style, layout pattern, motion restraint level), not literal values lifted from the source.
 6. **Confirm the brief before generating code.** A short Reference Design Brief (below) is cheap to review and correct; a full page built on a misread reference is not. Share it and get a thumbs-up first, especially for client work.
+
+## No URL From the User? Suggest One From the Known-Sites Library
+
+When the user names a **style or vibe** ("brutalist", "make it feel dark and technical like a dev tool", "Y2K nostalgia") or a **sector** but supplies no example link, don't skip straight to guessing from words — `data/ui-ux/known-sites-library.csv` (`UX155`-`UX244`) is a pre-built map of real, named sites and site-finding sources against all 30 `style-vocabulary.csv` styles, written from existing design knowledge (no live fetch was used to build it).
+
+1. **Query it by style tag**, same as any other CSV: `python3 scripts/common/search.py data/ui-ux/known-sites-library.csv --tag style:UX141` (swap in the `UXnnn` id of the matching `style-vocabulary.csv` row) or `--query "dark-technical"`.
+2. **Surface 2-3 named examples to the user**, plus the row's built-in gallery fallback (an Awwwards/Dribbble/Land-book tag to browse) for anything the two named examples don't cover. Frame these as a starting point to confirm, not a decision already made — "Linear and Vercel are the usual references for this look, or I can pull fresher live examples from Dribbble's dark-ui tag — want me to look at one of these, or do you have your own reference in mind?"
+3. **Treat `last_verified` on this file as "when this entry was written," not "confirmed live."** Sites redesign; a company on the list may no longer look the way the entry describes. Once the user picks one, run it through the normal process above (`WebFetch`/live browser tool/`scan.py`) before writing the Design Brief — never quote this CSV's `option` text as current fact without that check.
+4. **The same IP caution applies double here** — these are curated suggestions for *what to go look at*, not pre-approved design decisions. Extract principles from whatever the live check shows, not from this file's prose.
+5. **Gallery rows exist because named flagships saturate.** If a style is heavily copied right now (dark-technical, gradient-mesh), lean on the gallery row over the named flagship — the point of naming Linear/Stripe/Vercel in this file is to show what to avoid converging on, not what to copy.
 
 ## Reference Design Brief (template)
 

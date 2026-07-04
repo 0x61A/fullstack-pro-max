@@ -2,6 +2,12 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.13.0] — 2026-07-04
+
+### Added
+- **Known-sites library** (`data/ui-ux/known-sites-library.csv`, `UX155-UX244`, 90 rows): maps all 30 `style-vocabulary.csv` styles to 2 real named sites + 1 evergreen gallery-search source (Awwwards/Dribbble/Land-book tag) each, written from existing design knowledge — no live fetch used to build it. Lets the skill suggest concrete inspiration ("Linear and Vercel for dark-technical, or Dribbble's dark-ui tag for fresher picks") when the user names a style or sector but supplies no reference link, instead of guessing from words alone. UI/UX module total: 154 → 244 rows.
+- **`reference-site-analysis.md` — "No URL From the User?" section**: documents how to query the library by style tag via `scripts/common/search.py --tag style:UXnnn`, surface named examples + gallery fallback as a confirm-first suggestion, and route the user's pick through the existing WebFetch/live-browser/`scan.py` verification flow before writing a Design Brief. Explicit caveat: the file's `last_verified` means "when this entry was written," not "confirmed live" — sites redesign, always verify before quoting specifics, and the same extract-principles-not-pixels rule applies to named examples same as user-supplied links.
+
 ## [0.12.0] — 2026-07-04
 
 ### Added
@@ -93,6 +99,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.13.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.13.0
 [0.12.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.12.0
 [0.11.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.11.0
 [0.10.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.10.1

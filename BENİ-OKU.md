@@ -15,7 +15,7 @@
 
 ## İçindekiler
 
-[İçinde ne var](#i̇çinde-ne-var) · [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanımda](#kullanımda-nasıl-görünüyor) · [Saha testleri](#saha-testleri) · [Script'ler](#scriptler) · [Bilinen sınırlar](#bilinen-sınırlar)
+[İçinde ne var](#i̇çinde-ne-var) · [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanımda](#kullanımda-nasıl-görünüyor) · [Saha testleri](#saha-testleri) · [Gerçek örnekler](#gerçek-örnekler) · [Script'ler](#scriptler) · [Bilinen sınırlar](#bilinen-sınırlar)
 
 ## Hızlı başlangıç
 
@@ -92,6 +92,18 @@ const securityHeaders = [
 | [`dark-technical-dashboard/`](examples/dark-technical-dashboard) | "Karanlık, teknik dashboard — sıfırdan değil hazır component kullan" | Bir palet satırının hex-çıkarma sezgiseli accent rengini sessizce düşürüyordu; `scripts/backend/generate.py` zaten çoğul verilen kaynak adlarını çift çoğulluyordu (`projects` → `projectses`). İkisi de düzeltildi. İki component-library kaynağı canlı çekilip `component-libraries.csv` iddialarıyla karşılaştırıldı — ikisi de hâlâ doğru, bir detay güncellendi. |
 
 Her klasörün kendi `.md` yazısı çalıştırılan komutları ve hangi referans dosyası/CSV satırına denk geldiğini gösteriyor — routing mantığı sadece okunarak değil, skill'in güncel sürümüne karşı yeniden çalıştırılarak da kontrol edilebilir.
+
+## Gerçek örnekler
+
+Yukarıdaki `examples/` iskeletleri kasıtlı olarak yarım — TODO işaretli yapı, teslim edilebilir bir sayfa değil. Aşağıdakiler bu başlangıç noktasının gerçek, bitmiş bir siteye taşındığında nasıl göründüğünün ekran görüntüleri.
+
+**AURA — Güzellik & Bakım Evi** (kuaför/güzellik). [`salon-site` saha testiyle](examples/salon-site) aynı karar yolu: `BE088` backend-gerekmiyor kararı, `UX269` kuaför sektör yönü, playful-rounded stil.
+
+![AURA kuaför sitesi](assets/screenshot-salon-build.png)
+
+**Meridyen Kahve** (kafe/restoran). `UX068` sektör yönüne göre: sıcak toprak tonu palet, editorial yemek fotoğrafçılığı, asimetrik hero.
+
+![Meridyen Kahve kafe sitesi](assets/screenshot-cafe-build.png)
 
 ## Script'ler
 

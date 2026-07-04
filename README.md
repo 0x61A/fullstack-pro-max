@@ -15,7 +15,7 @@
 
 ## Contents
 
-[What's inside](#whats-inside) · [Quick start](#quick-start) · [In use](#what-it-looks-like-in-use) · [Field tests](#field-tests) · [Scripts](#scripts) · [Known limitations](#known-limitations)
+[What's inside](#whats-inside) · [Quick start](#quick-start) · [In use](#what-it-looks-like-in-use) · [Field tests](#field-tests) · [Real builds](#real-builds) · [Scripts](#scripts) · [Known limitations](#known-limitations)
 
 ## Quick start
 
@@ -92,6 +92,18 @@ Two real prompts run end to end through the actual scripts (not dry-runs, not tr
 | [`dark-technical-dashboard/`](examples/dark-technical-dashboard) | "Dark, technical dashboard — use a ready-made component instead of building from scratch" | A palette row's hex-extraction heuristic silently dropped the accent color; `scripts/backend/generate.py` double-pluralized resource names already given in plural form (`projects` → `projectses`). Both fixed. Two component-library sources were also live-fetched and spot-checked against `component-libraries.csv`'s claims — both still accurate, one detail updated. |
 
 Each folder's `.md` write-up shows the exact commands run and which reference files/CSV rows they hit, so the routing logic can be re-checked against the current version of the skill, not just read about.
+
+## Real builds
+
+The `examples/` scaffolds above are deliberately unfinished — TODO-marked structure, not a shippable page. These are screenshots of what that starting point looks like carried through to a real, finished site.
+
+**AURA — Güzellik & Bakım Evi** (salon/beauty). Same decision path as the [`salon-site` field test](examples/salon-site): `BE088` no-backend call, `UX269` salon sector direction, playful-rounded style.
+
+![AURA salon site](assets/screenshot-salon-build.png)
+
+**Meridyen Kahve** (cafe/restaurant). Built along the `UX068` sector direction: warm earth palette, editorial food photography, asymmetric hero.
+
+![Meridyen Kahve cafe site](assets/screenshot-cafe-build.png)
 
 ## Scripts
 

@@ -2,6 +2,11 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.16.1] — 2026-07-04
+
+### Added
+- **"Real builds" section** in README.md/BENİ-OKU.md with screenshots of two sites built following this skill's guidance to a finished result (not the bare `examples/` scaffolds, which stay intentionally unfinished): a salon/beauty site (same decision path as the `salon-site` field test — `BE088`, `UX269`, playful-rounded) and a cafe/restaurant site (`UX068` sector direction). Screenshots taken with headless Chrome against the running builds, added as `assets/screenshot-salon-build.png` and `assets/screenshot-cafe-build.png`.
+
 ## [0.16.0] — 2026-07-04
 
 ### Added
@@ -127,6 +132,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.16.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.1
 [0.16.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.0
 [0.15.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.15.0
 [0.14.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.1

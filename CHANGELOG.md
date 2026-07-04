@@ -2,6 +2,15 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.18.0] — 2026-07-04
+
+### Fixed
+- **Real feedback caught a real repeat mistake**: the five "Real builds" sites from `v0.16.1`/`v0.17.0` (salon, cafe, law firm, SaaS, fitness) varied palette, type, and sector — but on user review, all five shared the exact same page architecture (kicker → headline → subhead → two buttons → feature-card grid → footer). Different skin, same skeleton — the `UX051` anti-pattern this skill's own data names, and a failure of the five builds' own `UX050` check against *each other*. README.md/BENİ-OKU.md's "Real builds" section now states this honestly instead of the previous (incorrect) "zero shared layout structure" claim.
+- **`references/frontend-distinctiveness.md` § Sector Art Direction** gained an explicit warning tied to this exact failure mode: a sector recipe governs *what the page is about*, not *how it's structured* — pick a Layout & Composition technique (`UX052`/`UX054`/`UX055`/`UX056`/`UX059`) per brief, and run the `UX050` check across a *set* of pages built together, not just each one against the outside market.
+
+### Added
+- **Three more real builds, this time varying page architecture itself**: Meridian Atelier (architecture — persistent split-screen, typographic index as navigation, no hero/cards), Casa Deniz (boutique hotel, `UX274` — sequence of full-bleed photo statements, no hero/cards), NOKTA Stüdyo (sound/motion studio, `UX132` collage/zine — scrolling marquee as the primary visual element, rotated overlapping cards breaking the grid on purpose). Eight real builds total now, no two sharing a page architecture.
+
 ## [0.17.0] — 2026-07-04
 
 ### Added
@@ -141,6 +150,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.18.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.18.0
 [0.17.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.17.0
 [0.16.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.1
 [0.16.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.0

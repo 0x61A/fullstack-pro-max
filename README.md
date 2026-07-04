@@ -117,7 +117,23 @@ The `examples/` scaffolds above are deliberately unfinished — TODO-marked stru
 
 ![Kinetik fitness studio site](assets/screenshot-fitness-build.png)
 
-Five sectors, five style-vocabulary combinations, zero shared layout structure, palette, or type pairing — the point being demonstrated, not just claimed.
+Five sectors, five palettes, five type pairings — but on review, all five share the same page architecture (kicker → headline → subhead → two buttons → feature/card grid → footer). Different skin, same skeleton: exactly the `UX051` anti-pattern this skill's own data names ("the default AI/template look"), and the five of them fail their own `UX050` check (*"could this belong to five other competitors with just a logo swap?"*) against each other, not just against the market. Caught on review, not shipped as a false claim.
+
+### Breaking the shared skeleton
+
+Three more builds, this time varying **page architecture** itself, not just palette/type — applying `UX052` (break the vertical-stack-of-sections pattern), `UX054` (asymmetric/broken grid), `UX055` (extreme scale contrast), `UX056` (deliberate edge-bleed), `UX059` (typography as the layout, not text in a text box), and `UX060` (color-blocking as structure).
+
+**Meridian Atelier** (architecture studio). No hero, no cards: a persistent split-screen — a scrolling typographic project index on one side drives a fixed image panel on the other (`UX059`, `UX054`). The index *is* the navigation.
+
+![Meridian Atelier architecture site](assets/screenshot-architecture-build.png)
+
+**Casa Deniz** (boutique hotel, `UX274`). No hero, no cards: a sequence of full-bleed, full-viewport photo statements, one per scroll-snap, booking chrome tucked to a corner every time — never centered (`UX056`, `UX060`).
+
+![Casa Deniz boutique hotel site](assets/screenshot-hotel-build.png)
+
+**NOKTA Stüdyo** (sound/motion studio, `UX132` collage/zine). No hero, no cards: a scrolling marquee *is* the primary visual element, with rotated, overlapping, absolutely-positioned service cards breaking any grid on purpose (`UX055`, `UX054`).
+
+![NOKTA collage studio site](assets/screenshot-collage-build.png)
 
 ## Scripts
 

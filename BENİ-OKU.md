@@ -117,7 +117,23 @@ Yukarıdaki `examples/` iskeletleri kasıtlı olarak yarım — TODO işaretli y
 
 ![Kinetik fitness stüdyosu sitesi](assets/screenshot-fitness-build.png)
 
-Beş sektör, beş stil-sözlüğü kombinasyonu, sıfır paylaşılan yerleşim yapısı/palet/tip eşleşmesi — iddia değil, gösterilen nokta bu.
+Beş sektör, beş palet, beş tip eşleşmesi — ama gözden geçirince beşi de aynı sayfa mimarisini paylaşıyor (kicker → başlık → alt metin → 2 buton → kart/özellik grid'i → footer). Farklı kaplama, aynı iskelet: skill'in kendi verisinin adlandırdığı `UX051` anti-pattern'inin ("default AI/template görünüşü") ta kendisi, ve beşi de kendi `UX050` kontrolünü ("5 rakibe logo değişse geçer mi?") birbirine karşı bile geçemiyor. İncelemede yakalandı, yanlış iddia olarak kalması yerine düzeltildi.
+
+### Paylaşılan iskeleti kırmak
+
+Üç yeni site, bu sefer **sayfa mimarisinin kendisini** değiştirerek, sadece palet/tip değil — `UX052` (vertical-stack-of-sections kırılımı), `UX054` (asimetrik/kırık grid), `UX055` (aşırı scale contrast), `UX056` (bilinçli edge-bleed), `UX059` (tipografi yerleşimin kendisi, kutudaki metin değil), `UX060` (color-blocking yapı olarak) uygulanarak.
+
+**Meridian Atelier** (mimarlık stüdyosu). Hero yok, kart yok: kalıcı split-screen — kayan tipografik proje indeksi bir tarafta, sabit görsel paneli diğer tarafta yönlendiriyor (`UX059`, `UX054`). İndeks aynı zamanda navigasyonun kendisi.
+
+![Meridian Atelier mimarlık sitesi](assets/screenshot-architecture-build.png)
+
+**Casa Deniz** (butik otel, `UX274`). Hero yok, kart yok: art arda tam-viewport fotoğraf cümleleri, her biri kendi scroll-snap'inde, rezervasyon chrome'u her seferinde köşeye sıkışmış — asla merkezde değil (`UX056`, `UX060`).
+
+![Casa Deniz butik otel sitesi](assets/screenshot-hotel-build.png)
+
+**NOKTA Stüdyo** (ses/hareket stüdyosu, `UX132` collage/zine). Hero yok, kart yok: kayan bir marquee ana görsel eleman, döndürülmüş, çakışan, mutlak konumlu hizmet kartları bilinçli olarak her grid'i kırıyor (`UX055`, `UX054`).
+
+![NOKTA collage stüdyo sitesi](assets/screenshot-collage-build.png)
 
 ## Script'ler
 

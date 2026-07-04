@@ -1,4 +1,4 @@
-> Last updated: 2026-07-04 · Module version: 0.3
+> Last updated: 2026-07-04 · Module version: 0.4
 
 # Routing
 
@@ -14,7 +14,7 @@ Load this file first when an action doesn't obviously map to a single file. It t
 | Testing/QA | ✅ Built | 4 | `data/testing/*.csv` | `testing-strategy.md`, `accessibility-performance-audit.md` |
 | Security/Cybersecurity | ✅ Built | 5 | `data/security/*.csv` (134 checks) | `security-threat-modeling.md`, `secure-coding-standards.md`, `api-security.md`, `infra-cloud-security.md`, `incident-response.md`, `security-scoring.md` |
 | E-commerce & Payments | ✅ Built | 6 | `data/ecommerce/*.csv` | `stripe-integration.md`, `shopify-integration.md` |
-| UI/UX & Distinctive Frontend | ✅ Built | 7 | `data/ui-ux/*.csv` (268 rows) | `ui-ux-quickref.md`, `frontend-distinctiveness.md` (flagship), `reference-site-analysis.md`, `component-library-integration.md`, `art-direction-derivation.md` |
+| UI/UX & Distinctive Frontend | ✅ Built | 7 | `data/ui-ux/*.csv` (275 rows) | `ui-ux-quickref.md`, `frontend-distinctiveness.md` (flagship), `reference-site-analysis.md`, `component-library-integration.md`, `art-direction-derivation.md` |
 | SEO | ✅ Built | 8 | `data/seo/*.csv` (112 rows) | `seo-technical.md`, `seo-content-eeat.md`, `seo-scoring-system.md` |
 | Ads | ✅ Built | 9 | `data/ads/*.csv` (74 rows) | `ads-google.md`, `ads-meta.md`, `ads-other-platforms.md`, `ads-scoring-system.md` |
 | AI Integration | ✅ Built | B1 | `data/ai/*.csv` (43 rows) | `ai-integration.md`, `ai-security.md` |

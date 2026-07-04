@@ -8,6 +8,8 @@ Core guidance for the `plan` and `build` actions when the module is Backend & AP
 
 Ask these questions in order; stop at the first one that resolves the choice. Full detail and edge cases live in `data/backend/stacks.csv`.
 
+0. **Does the brief actually need a backend at all?** The most common "build me a business website" ask is a marketing/brochure site — a handful of pages, maybe a blog, a contact form — with no user accounts, no stored user data, and no dynamic app logic. Don't default to a full stack-selection exercise for that; a static export (Next.js static / Astro) with a single serverless form endpoint is faster, cheaper, and has no backend to secure (row `BE088`). Move to question 1 as soon as the brief includes accounts, a dashboard, or stored user-generated content beyond a form submission.
+
 1. **Does a BaaS (Supabase/Firebase) cover the data + auth + storage needs with little custom logic?**
    → Yes, and the data is relational / needs SQL joins/reporting: **Supabase**.
    → Yes, and the data is document-shaped / needs offline-first mobile sync: **Firebase**.

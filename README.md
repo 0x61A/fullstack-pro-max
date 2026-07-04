@@ -29,7 +29,7 @@ Start a new Claude Code session — the skill loads automatically from `SKILL.md
 
 ## What's inside
 
-Thirteen modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts. ~1030 data rows, 37 reference docs, 16 scripts — **zero vendored dependencies**, no bundled venv, no `requirements.txt`.
+Thirteen modules, each backed by structured data (CSV), on-demand reference docs, and stdlib-only Python scripts. ~1038 data rows, 37 reference docs, 16 scripts — **zero vendored dependencies**, no bundled venv, no `requirements.txt`.
 
 **Ship the product**
 

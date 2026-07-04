@@ -29,7 +29,7 @@ Yeni bir Claude Code oturumu başlatın — skill, `SKILL.md` frontmatter'ından
 
 ## İçinde ne var
 
-On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklenen referans dokümanları ve yalnızca stdlib kullanan Python script'leriyle destekleniyor. ~1030 veri satırı, 37 referans dokümanı, 16 script — **sıfır paketlenmiş bağımlılık**, venv yok, `requirements.txt` yok.
+On üç modül; her biri yapılandırılmış veri (CSV), ihtiyaç anında yüklenen referans dokümanları ve yalnızca stdlib kullanan Python script'leriyle destekleniyor. ~1038 veri satırı, 37 referans dokümanı, 16 script — **sıfır paketlenmiş bağımlılık**, venv yok, `requirements.txt` yok.
 
 **Ürünü çıkar**
 

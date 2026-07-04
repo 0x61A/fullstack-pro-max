@@ -2,6 +2,13 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.15.0] — 2026-07-04
+
+### Added
+- **First field-test pass**: ran the `plan` action against a real "build a from-scratch business website" prompt and the new `design` component-library chain against a "dark-technical dashboard, ready-made component" prompt, using the actual scripts rather than reasoning about them abstractly. The component-library chain (style vocabulary → known-sites-library → component-libraries → Selection Guide) worked end to end with no changes needed. Two real gaps surfaced and were fixed below; caught and fixed one bad cross-reference id in the same pass (`UX133` mistakenly cited as luxury-minimal in a new row — actual id is `UX143`).
+- **`data/backend/stacks.csv` — `BE088`**: a static/no-backend option ("static site generator + one serverless form endpoint") for marketing/brochure-site briefs with no accounts, no stored user data, and no dynamic app logic beyond a contact form. Previously all 40 rows assumed some backend was needed, so the single most common "build my business a website" ask had no direct row match. `references/backend-architecture.md`'s Stack Decision Tree gained a new question 0 ("does the brief actually need a backend at all?") ahead of the existing framework-selection questions. Backend module total: 87 → 88 rows.
+- **`data/ui-ux/sector-art-direction.csv` — 7 new sector rows (`UX269-UX275`)**: salon/beauty, trades/home services, events/weddings/photography, consulting/professional services, pet care/veterinary, hospitality/boutique lodging, auto services — general local-service/craft business categories that fell outside the original 10 sectors (cafe, healthcare, legal, SaaS, e-commerce, real estate, fitness, finance, education, nonprofit). UI/UX module total: 268 → 275 rows.
+
 ## [0.14.1] — 2026-07-04
 
 ### Changed
@@ -110,6 +117,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.15.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.15.0
 [0.14.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.1
 [0.14.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.14.0
 [0.13.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.13.0

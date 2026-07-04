@@ -113,27 +113,25 @@ The `examples/` scaffolds above are deliberately unfinished — TODO-marked stru
 
 ![Fluxlane SaaS landing page](assets/screenshot-saas-build.png)
 
-**Kinetik Performans Stüdyosu** (fitness/wellness). `UX074` sector direction (high-energy gradient, diagonal dynamism) with `UX102` condensed display type — dark mode, multi-color gradient mesh, the most visually loud of the five.
+Four sectors, four palettes, four type pairings — but on review, all four share the same page architecture (kicker → headline → subhead → two buttons → feature/card grid → footer). Different skin, same skeleton: exactly the `UX051` anti-pattern this skill's own data names ("the default AI/template look"), and they fail their own `UX050` check (*"could this belong to five other competitors with just a logo swap?"*) against each other, not just against the market. Caught on review, not shipped as a false claim.
 
-![Kinetik fitness studio site](assets/screenshot-fitness-build.png)
+### Breaking the shared skeleton — attempt one, and where it went wrong
 
-Five sectors, five palettes, five type pairings — but on review, all five share the same page architecture (kicker → headline → subhead → two buttons → feature/card grid → footer). Different skin, same skeleton: exactly the `UX051` anti-pattern this skill's own data names ("the default AI/template look"), and the five of them fail their own `UX050` check (*"could this belong to five other competitors with just a logo swap?"*) against each other, not just against the market. Caught on review, not shipped as a false claim.
+The first fix over-corrected: three builds (an architecture studio, a boutique hotel, a fitness studio) chased **structural** novelty — split-screens, full-bleed sections, marquee-driven collage — but sacrificed craft to get there. The architecture and hotel builds faked photography with flat CSS gradients standing in for images, which is fatal for sectors (`UX073`, `UX274`) whose entire art direction *is* real imagery — their own `avoid_when` fields say so explicitly. The fitness build leaned on a radial-gradient "blob" backdrop, which is a named ingredient of `UX051`'s own anti-pattern definition. Caught on user review, not shipped as a fix — all three were removed rather than kept as a bad example.
 
-### Breaking the shared skeleton
-
-Three more builds, this time varying **page architecture** itself, not just palette/type — applying `UX052` (break the vertical-stack-of-sections pattern), `UX054` (asymmetric/broken grid), `UX055` (extreme scale contrast), `UX056` (deliberate edge-bleed), `UX059` (typography as the layout, not text in a text box), and `UX060` (color-blocking as structure).
-
-**Meridian Atelier** (architecture studio). No hero, no cards: a persistent split-screen — a scrolling typographic project index on one side drives a fixed image panel on the other (`UX059`, `UX054`). The index *is* the navigation.
-
-![Meridian Atelier architecture site](assets/screenshot-architecture-build.png)
-
-**Casa Deniz** (boutique hotel, `UX274`). No hero, no cards: a sequence of full-bleed, full-viewport photo statements, one per scroll-snap, booking chrome tucked to a corner every time — never centered (`UX056`, `UX060`).
-
-![Casa Deniz boutique hotel site](assets/screenshot-hotel-build.png)
-
-**NOKTA Stüdyo** (sound/motion studio, `UX132` collage/zine). No hero, no cards: a scrolling marquee *is* the primary visual element, with rotated, overlapping, absolutely-positioned service cards breaking any grid on purpose (`UX055`, `UX054`).
+**NOKTA Stüdyo** (sound/motion studio, `UX132` collage/zine) survived that pass — no hero, no cards: a scrolling marquee *is* the primary visual element, rotated overlapping cards breaking the grid on purpose (`UX055`, `UX054`), executed with real craft rather than a structural gimmick alone.
 
 ![NOKTA collage studio site](assets/screenshot-collage-build.png)
+
+### Attempt two — different *themes*, not just different colors, done properly
+
+"Different" has to mean the visual material itself, not a recolored version of the same one — and it has to still look genuinely good, which the first attempt at architecture/hotel/fitness didn't.
+
+**Liman Emlak** (real estate, `UX073`). No hero — the property inventory itself opens the page, a masonry grid of real photography (`UX054`), an editorial note breaking the grid rhythm once. The architecture-studio failure above used fake gradient rectangles for "photos"; this one uses real images, because `UX073` doesn't work without them.
+
+![Liman Emlak real estate site](assets/screenshot-realestate-build.png)
+
+Two more attempts at this — a claymorphism kids' app and a glassmorphism fintech wallet — didn't clear this skill's own quality bar on user review and were pulled rather than kept as bad examples. A themed *material* (glass, clay, or otherwise) still has to be executed with real craft, not just picked for novelty; the working versions of those, if any, will land here once they do.
 
 ## Scripts
 

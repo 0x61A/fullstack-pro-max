@@ -2,7 +2,7 @@
 name: fullstack-pro-max
 description: "Full-stack product delivery skill for agency/client and personal SaaS builds. Covers distinctive, non-templated UI/UX and frontend design (turning user-supplied reference site URLs into a Reference Design Brief before coding, suggesting real named sites per style/sector from a built-in 90-entry known-sites library when the user has no link, or sourcing ready-made components/themes from real component marketplaces like 21st.dev/shadcn/ui/Aceternity UI via live fetch + a copy-paste integration guide when the user wants a pre-built starting point instead of a from-scratch build); backend architecture (Node.js/Next.js/Express/Nest.js, Python FastAPI/Django, or Supabase/Firebase BaaS — auto-selected per project); database & auth design; CI/CD & deployment (Vercel, Netlify, Cloudflare); QA testing; deep cybersecurity (threat modeling, secure coding, API/infra security, incident response — OWASP and beyond); SEO; paid ads; e-commerce payments (Stripe, Shopify); AI feature integration (Claude API — model selection, streaming chat, tool use, RAG, LLM security); analytics & measurement (GA4/PostHog/Plausible selection, event taxonomy, funnels/retention, consent-compliant tracking); email (Resend/Postmark/SES selection, transactional sending patterns, SPF/DKIM/DMARC deliverability); and i18n/localization (next-intl/react-i18next selection, URL strategy, hreflang, RTL, ICU pluralization). Actions: plan, build, design, integrate, integrate-ai, integrate-email, measure, localize, deploy, test, secure, integrate-payments, optimize-seo, launch-ads, audit, review. Adaptive stack selection, not locked to one frontend+backend combo."
 metadata:
-  version: "0.18.0"
+  version: "0.19.0"
   last_updated: "2026-07-04"
 ---
 

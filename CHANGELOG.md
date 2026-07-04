@@ -2,6 +2,15 @@
 
 All notable changes to this skill are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/): new checks, data rows, or modules bump **minor**, corrections bump **patch**. The latest version here stays in sync with `metadata.version` in `SKILL.md`.
 
+## [0.19.0] — 2026-07-04
+
+### Removed
+- **The three `v0.18.0` "structural fix" builds (Meridian Atelier, Casa Deniz, Kinetik Performans Stüdyosu)** — user review called them out as low-quality on their own merits, separately from the page-architecture point they were built to prove. Root causes: the architecture and hotel builds faked photography with flat CSS gradients in place of real images, fatal for sectors (`UX073`, `UX274`) whose art direction is defined by real imagery; the fitness build's radial-gradient "blob" backdrop is literally a named ingredient of `UX051`'s own anti-pattern description. Removed rather than kept as bad examples — screenshots, local project folders, and README mentions all pulled.
+
+### Added
+- **Liman Emlak** (real estate, `UX073`) replaces them: a masonry gallery of real photography (sourced live, not faked) as the opening content, no hero, an editorial note breaking grid rhythm once. `NOKTA Stüdyo` (collage/zine, `v0.18.0`) is unaffected and stays as the one build from that batch that held up.
+- Two further attempts at this (claymorphism, glassmorphism) were built and rejected on the same quality grounds before being committed to this repo at all — noted honestly in the README rather than omitted.
+
 ## [0.18.0] — 2026-07-04
 
 ### Fixed
@@ -150,6 +159,7 @@ First public release.
 - `scripts/security/audit.py`: repeatable `--exclude PATH` flag; the scanner now always skips its own file (its pattern definitions would otherwise match themselves).
 - MIT license, English README, Turkish README (`README.tr.md`), this changelog.
 
+[0.19.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.19.0
 [0.18.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.18.0
 [0.17.0]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.17.0
 [0.16.1]: https://github.com/0x61A/fullstack-pro-max/releases/tag/v0.16.1

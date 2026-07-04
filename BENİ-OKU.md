@@ -113,27 +113,25 @@ Yukarıdaki `examples/` iskeletleri kasıtlı olarak yarım — TODO işaretli y
 
 ![Fluxlane SaaS sitesi](assets/screenshot-saas-build.png)
 
-**Kinetik Performans Stüdyosu** (fitness/wellness). `UX074` sektör yönü (yüksek enerji gradient, diagonal dinamizm) + `UX102` condensed display tip — koyu mod, çok renkli gradient mesh, beşin içinde görsel olarak en yüksek sesli olan.
+Dört sektör, dört palet, dört tip eşleşmesi — ama gözden geçirince dördü de aynı sayfa mimarisini paylaşıyor (kicker → başlık → alt metin → 2 buton → kart/özellik grid'i → footer). Farklı kaplama, aynı iskelet: skill'in kendi verisinin adlandırdığı `UX051` anti-pattern'inin ("default AI/template görünüşü") ta kendisi, ve kendi `UX050` kontrolünü ("5 rakibe logo değişse geçer mi?") birbirine karşı bile geçemiyorlar. İncelemede yakalandı, yanlış iddia olarak kalması yerine düzeltildi.
 
-![Kinetik fitness stüdyosu sitesi](assets/screenshot-fitness-build.png)
+### Paylaşılan iskeleti kırmak — birinci deneme ve nerede yanlış gitti
 
-Beş sektör, beş palet, beş tip eşleşmesi — ama gözden geçirince beşi de aynı sayfa mimarisini paylaşıyor (kicker → başlık → alt metin → 2 buton → kart/özellik grid'i → footer). Farklı kaplama, aynı iskelet: skill'in kendi verisinin adlandırdığı `UX051` anti-pattern'inin ("default AI/template görünüşü") ta kendisi, ve beşi de kendi `UX050` kontrolünü ("5 rakibe logo değişse geçer mi?") birbirine karşı bile geçemiyor. İncelemede yakalandı, yanlış iddia olarak kalması yerine düzeltildi.
+İlk düzeltme fazla ileri gitti: üç site (bir mimarlık stüdyosu, bir butik otel, bir fitness stüdyosu) **yapısal** yeniliği kovaladı — split-screen'ler, full-bleed bölümler, marquee-güdümlü collage — ama bunun için zanaati feda etti. Mimarlık ve otel yapımları fotoğrafı düz CSS gradient'lerle sahteledi; bu, sanat yönü tamamen gerçek görsele dayanan sektörler (`UX073`, `UX274`) için ölümcül — kendi `avoid_when` alanları bunu açıkça söylüyor. Fitness yapımı radial-gradient "blob" arka plana yaslandı, ki bu `UX051`'in kendi anti-pattern tanımının adı geçen bir bileşeni. Kullanıcı incelemesinde yakalandı, kötü örnek olarak tutulmak yerine üçü de kaldırıldı.
 
-### Paylaşılan iskeleti kırmak
-
-Üç yeni site, bu sefer **sayfa mimarisinin kendisini** değiştirerek, sadece palet/tip değil — `UX052` (vertical-stack-of-sections kırılımı), `UX054` (asimetrik/kırık grid), `UX055` (aşırı scale contrast), `UX056` (bilinçli edge-bleed), `UX059` (tipografi yerleşimin kendisi, kutudaki metin değil), `UX060` (color-blocking yapı olarak) uygulanarak.
-
-**Meridian Atelier** (mimarlık stüdyosu). Hero yok, kart yok: kalıcı split-screen — kayan tipografik proje indeksi bir tarafta, sabit görsel paneli diğer tarafta yönlendiriyor (`UX059`, `UX054`). İndeks aynı zamanda navigasyonun kendisi.
-
-![Meridian Atelier mimarlık sitesi](assets/screenshot-architecture-build.png)
-
-**Casa Deniz** (butik otel, `UX274`). Hero yok, kart yok: art arda tam-viewport fotoğraf cümleleri, her biri kendi scroll-snap'inde, rezervasyon chrome'u her seferinde köşeye sıkışmış — asla merkezde değil (`UX056`, `UX060`).
-
-![Casa Deniz butik otel sitesi](assets/screenshot-hotel-build.png)
-
-**NOKTA Stüdyo** (ses/hareket stüdyosu, `UX132` collage/zine). Hero yok, kart yok: kayan bir marquee ana görsel eleman, döndürülmüş, çakışan, mutlak konumlu hizmet kartları bilinçli olarak her grid'i kırıyor (`UX055`, `UX054`).
+**NOKTA Stüdyo** (ses/hareket stüdyosu, `UX132` collage/zine) bu geçişten sağ çıktı — hero yok, kart yok: kayan bir marquee ana görsel eleman, döndürülmüş çakışan kartlar bilinçli grid kırılımı (`UX055`, `UX054`), yapısal bir jest olarak değil gerçek zanaatla uygulandı.
 
 ![NOKTA collage stüdyo sitesi](assets/screenshot-collage-build.png)
+
+### İkinci deneme — sadece renk değil, gerçekten farklı *temalar*, düzgün yapılmış
+
+"Farklı" görsel malzemenin kendisi olmalı, aynısının recolored versiyonu değil — ve hâlâ gerçekten iyi görünmesi lazım, ki mimarlık/otel/fitness'taki ilk deneme bunu başaramadı.
+
+**Liman Emlak** (emlak, `UX073`). Hero yok — mülk envanterinin kendisi sayfayı açıyor, gerçek fotoğraflardan masonry grid (`UX054`), grid ritmini bir kez kıran editorial not. Yukarıdaki mimarlık-stüdyosu başarısızlığı "fotoğraf" için sahte gradient dikdörtgen kullanmıştı; bu, gerçek görsel kullanıyor — çünkü `UX073` gerçek görsel olmadan çalışmıyor.
+
+![Liman Emlak emlak sitesi](assets/screenshot-realestate-build.png)
+
+Bunun için iki deneme daha — claymorphism bir çocuk uygulaması ve glassmorphism bir fintech cüzdanı — kullanıcı incelemesinde skill'in kendi kalite çıtasını geçemedi ve kötü örnek olarak tutulmak yerine kaldırıldı. Temalı bir *malzeme* (cam, kil, ya da başka) hâlâ gerçek zanaatla uygulanmalı, sadece yenilik olsun diye seçilmemeli; bunların çalışan versiyonları, varsa, buraya sonra eklenecek.
 
 ## Script'ler
 
